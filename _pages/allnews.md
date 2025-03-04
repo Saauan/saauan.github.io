@@ -8,10 +8,12 @@ permalink: /allnews.html
 ## News
 
 <div class="jumbotron">
-{% for article in site.data.news %}
+Nothing new yet!
+
+<!-- {% for article in site.data.news %}
 <b>{{ article.date }}</b>
 
 {{ article.headline }}
-{% endfor %}
+{% endfor %} -->
 
 </div>

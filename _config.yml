@@ -1,7 +1,7 @@
 # Site settings
-title: Richard Feynman
-email: richard@university.edu
-description: Academic webpage of Dr. Richard Feynman
+title: Tristan Coignion
+email: tristan.coignion@inria.fr
+description: Academic webpage of Tristan Coignion
 baseurl: ""
 url: ""
 
@@ -12,29 +12,28 @@ url: ""
 
 # Footer info
 affiliation: >
-  Richard Feynman<br/>
-  Professor of Physics<br/>
-  California Institute of Technology
+  Tristan Coignion<br/>
+  PhD student in Computer Science<br/>
+  Inria - Univeristy of Lille
 
 location: >
-  California Institute of Technology<br/>
-  1200 E California Blvd<br/>
-  Pasadena, CA 91125
+  University of Lille<br/>
+  Villeneuve-d'Ascq, France
 
 contact: >
-  <a href="mailto:richard@university.edu" target="_blank"><i class="fa fa-envelope fa-1x"></i> Contact Richard via email</a> <br/>
+  <a href="mailto:tristan.coignion@inria.fr" target="_blank"><i class="fa fa-envelope fa-1x"></i> Contact Tristan via email</a> <br/>
   <a href="https://github.com/sbryngelson/academic-website-template"><i class="fa fa-github fa-1x"></i> Use this site as a template!</a>
 
 # Pages shown in navbar
 nav_pages:
-  - name: about
+  #- name: about
   - name: publications
   - name: talks
-  - name: research
-  - name: software
-  - name: team
+  # - name: research
+  #- name: software
+  #- name: team
   - name: teaching
-  - name: blogs
+  #- name: blogs
 
 include:
   - .htaccess
@@ -62,14 +61,14 @@ kramdown:
 plugins: ["jekyll/scholar"]
 
 scholar:
-  last_name: Doe
-  first_name: [John]
+  last_name: Coignion
+  first_name: [Tristan]
 
   style: citesty
   locale: en
 
   source: /assets/
-  bibliography: ref.bib
+  bibliography: refs.bib
   bibliography_template: bibtemplate
   sort_by: year, month
   order: descending

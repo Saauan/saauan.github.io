@@ -1,17 +1,20 @@
-- name: Dr. Richard Feynman
+- name: Tristan Coignion
   photo: headshot.jpg
-  info: Richard C. Tolman Professor, California Institute of Technology
-  email: richard@university.edu
-  github: https://github.com/
-  researchgate: https://www.researchgate.net/
-  scholar: https://scholar.google.com/citations?user=B7vSqZsAAAAJ
-  cv: cv/cv.pdf
+  info: Tristan Coignion, University of Lille
+  email: tristan.coignion@inria.fr
+  github: https://github.com/saauan
+  researchgate: https://www.researchgate.net/profile/Tristan-Coignion
+  scholar: https://scholar.google.com/citations?user=YbTlbjMAAAAJ&hl=fr&oi=ao
+  #cv: cv/cv.pdf
   # Change the items in "education" you have (up to 6)
   education:
     [
-      "(1942) Ph.D. Physics, Princeton University",
-      "(1939) B.S. Physics, Massachusetts Institute of Technology",
+      #"(1942) Ph.D. Physics, Princeton University",
+      "(2022) Master's Degree in Software Engineering, University of Lille",
     ]
 
   educationshort:
-    ["(1942) Ph.D. Physics, Princeton", "(1939) B.S. Physics, MIT"]
+    [
+    #"(1942) Ph.D. Physics, Princeton", 
+    "(2022) Master's Degree in Software Engineering, University of Lille",
+    ]

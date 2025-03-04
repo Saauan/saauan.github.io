@@ -40,7 +40,14 @@ pre{
 
 {% if bibtest %}
 <a href="{{ site.url }}{{ site.baseurl }}/papers/{{ entry.file }}" target="_blank"><button class="btn btn-success btm-sm">PDF</button></a>
+
+{% else%}
+{% if entry.file %}
+<a href="{{ entry.file }}" target="_blank"><button class="btn btn-success btm-sm">PDF</button></a>
 {% endif %}
+{% endif %}
+
+
 
 {% if entry.doi %}
 {% if entry.type == 'unpublished' %}
