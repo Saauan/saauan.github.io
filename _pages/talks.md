@@ -27,6 +27,9 @@ permalink: /talks/
 - A performance Study of LLM-Generated Code on Leetcode ~ [Green Days 2024](https://perso.ens-lyon.fr/laurent.lefevre/greendaystoulouse2024/) - [[Slides]](https://slides.com/tristancoignion/a-performance-study)
 
 ## Posters
+
+- Faster Is Not Always Greener: The Costs of LLM-Based Code Optimization ~ Presented at [ASE 2025](https://conf.researchr.org/home/ase-2025) - [[Poster]](../papers/posters/faster-is-not-always-greener.pdf)
+
 - Green My LLM: Studying the key factors affecting the energy consumption of code assistants ~ [Green Days 2025](https://greendays.sciencesconf.org) - [[Poster]](../papers/green_my_llm_poster.pdf)
 
 <!-- <div class="jumbotron">
