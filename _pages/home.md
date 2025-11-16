@@ -9,7 +9,7 @@ permalink: /
 
 I am a researcher interested in the environmental footprint of Artificial Intelligence, and more particularly, the impact of Large Language Models (LLMs).
 
-Nowadays, I am focused on Large Language Models for code, and the energy consumption of their usage and of the code they generate.
+Nowadays, I am focused on LLMs for code, and the energy consumption of their usage and of the code they generate.
 
 <!-- <div class="container">
 <div class="row">

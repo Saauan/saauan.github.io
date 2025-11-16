@@ -7,13 +7,13 @@ permalink: /allnews.html
 
 ## News
 
-<div class="jumbotron">
-Nothing new yet!
+<div class="bg-primary p-2 bg-light border rounded-3">
+<!-- Nothing new yet! -->
 
-<!-- {% for article in site.data.news %}
+{% for article in site.data.news %}
 <b>{{ article.date }}</b>
 
 {{ article.headline }}
-{% endfor %} -->
+{% endfor %}
 
 </div>

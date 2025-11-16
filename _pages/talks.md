@@ -22,6 +22,7 @@ permalink: /talks/
 }
 </style>
 ## Selected talks
+- Thesis defense (2025) - [[Slides]](./thesis.pdf)
 - Green My LLM: How much does your copilot eat? ~ GT-GLIA 2025 - [[Slides]](https://slides.com/tristancoignion/gt-gl-ia-2025)
 - A performance Study of LLM-Generated Code on Leetcode ~ [EASE 2024](https://conf.researchr.org/home/ease-2024) - [[Slides]](https://slides.com/tristancoignion/ease-2024)
 - A performance Study of LLM-Generated Code on Leetcode ~ [Green Days 2024](https://perso.ens-lyon.fr/laurent.lefevre/greendaystoulouse2024/) - [[Slides]](https://slides.com/tristancoignion/a-performance-study)
