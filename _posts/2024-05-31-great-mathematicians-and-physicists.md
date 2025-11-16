@@ -2,7 +2,9 @@
 layout: post
 title: "Great Mathematicians and Physicists"
 date: 2024-05-31
+hidden: true
 categories: "Fun"
+# permalink: "/crinkles/"
 ---
 
 A list of 50 brilliant minds who have significantly advanced our understanding of the world and contributed to making it a better place!

@@ -33,11 +33,16 @@ nav_pages:
   #- name: software
   #- name: team
   - name: teaching
-  #- name: blogs
+  - name: posts
 
 include:
   - .htaccess
   - _pages
+
+collections:
+  posts:
+    output: true
+    permalink: /post/:title
 
 # Conversion
 markdown: kramdown

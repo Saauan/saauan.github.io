@@ -2,6 +2,7 @@
 layout: post
 title: "Space-Time"
 date: 1961-11-28
+hidden: true
 categories: "Lecture Notes"
 ---
 
