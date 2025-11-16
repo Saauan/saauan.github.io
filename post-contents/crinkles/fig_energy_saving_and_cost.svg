@@ -1,0 +1,1224 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   version="1.1"
+   class="marks"
+   width="446"
+   height="376"
+   viewBox="0 0 446 376"
+   id="svg129"
+   sodipodi:docname="fig_energy_saving_and_cost.svg"
+   inkscape:version="1.4.2 (1:1.4.2+202510271549+ebf0e940d0)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <defs
+     id="defs129" />
+  <sodipodi:namedview
+     id="namedview129"
+     pagecolor="#ffffff"
+     bordercolor="#999999"
+     borderopacity="1"
+     inkscape:showpageshadow="0"
+     inkscape:pageopacity="0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:zoom="1.2731093"
+     inkscape:cx="239.17821"
+     inkscape:cy="212.47194"
+     inkscape:window-width="1920"
+     inkscape:window-height="1052"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg129" />
+  <rect
+     width="446"
+     height="376"
+     fill="#FFFFFF"
+     id="rect1" />
+  <g
+     fill="none"
+     stroke-miterlimit="10"
+     transform="translate(40,33)"
+     id="g129">
+    <g
+       class="mark-group role-frame root"
+       role="graphics-object"
+       aria-roledescription="group mark container"
+       id="g128">
+      <g
+         transform="translate(0,0)"
+         id="g127">
+        <path
+           class="background"
+           aria-hidden="true"
+           d="M0.5,0.5h400v300h-400Z"
+           id="path1" />
+        <g
+           id="g126">
+          <g
+             class="mark-group role-axis"
+             aria-hidden="true"
+             id="g32">
+            <g
+               transform="translate(0.5,0.5)"
+               id="g31">
+              <path
+                 class="background"
+                 aria-hidden="true"
+                 d="M0,0h0v0h0Z"
+                 pointer-events="none"
+                 id="path2" />
+              <g
+                 id="g30">
+                <g
+                   class="mark-rule role-axis-grid"
+                   pointer-events="none"
+                   id="g29">
+                  <line
+                     transform="translate(0,300)"
+                     x2="400"
+                     y2="0"
+                     stroke="#DEDDDD"
+                     stroke-width="1"
+                     opacity="1"
+                     id="line2" />
+                  <line
+                     transform="translate(0,292)"
+                     x2="400"
+                     y2="0"
+                     stroke="#DEDDDD"
+                     stroke-width="1"
+                     opacity="1"
+                     id="line3" />
+                  <line
+                     transform="translate(0,285)"
+                     x2="400"
+                     y2="0"
+                     stroke="#DEDDDD"
+                     stroke-width="1"
+                     opacity="1"
+                     id="line4" />
+                  <line
+                     transform="translate(0,280)"
+                     x2="400"
+                     y2="0"
+                     stroke="#DEDDDD"
+                     stroke-width="1"
+                     opacity="1"
+                     id="line5" />
+                  <line
+                     transform="translate(0,274)"
+                     x2="400"
+                     y2="0"
+                     stroke="#DEDDDD"
+                     stroke-width="1"
+                     opacity="1"
+                     id="line6" />
+                  <line
+                     transform="translate(0,270)"
+                     x2="400"
+                     y2="0"
+                     stroke="#DEDDDD"
+                     stroke-width="1"
+                     opacity="1"
+                     id="line7" />
+                  <line
+                     transform="translate(0,240)"
+                     x2="400"
+                     y2="0"
+                     stroke="#DEDDDD"
+                     stroke-width="1"
+                     opacity="1"
+                     id="line8" />
+                  <line
+                     transform="translate(0,222)"
+                     x2="400"
+                     y2="0"
+                     stroke="#DEDDDD"
+                     stroke-width="1"
+                     opacity="1"
+                     id="line9" />
+                  <line
+                     transform="translate(0,210)"
+                     x2="400"
+                     y2="0"
+                     stroke="#DEDDDD"
+                     stroke-width="1"
+                     opacity="1"
+                     id="line10" />
+                  <line
+                     transform="translate(0,200)"
+                     x2="400"
+                     y2="0"
+                     stroke="#DEDDDD"
+                     stroke-width="1"
+                     opacity="1"
+                     id="line11" />
+                  <line
+                     transform="translate(0,192)"
+                     x2="400"
+                     y2="0"
+                     stroke="#DEDDDD"
+                     stroke-width="1"
+                     opacity="1"
+                     id="line12" />
+                  <line
+                     transform="translate(0,185)"
+                     x2="400"
+                     y2="0"
+                     stroke="#DEDDDD"
+                     stroke-width="1"
+                     opacity="1"
+                     id="line13" />
+                  <line
+                     transform="translate(0,180)"
+                     x2="400"
+                     y2="0"
+                     stroke="#DEDDDD"
+                     stroke-width="1"
+                     opacity="1"
+                     id="line14" />
+                  <line
+                     transform="translate(0,174)"
+                     x2="400"
+                     y2="0"
+                     stroke="#DEDDDD"
+                     stroke-width="1"
+                     opacity="1"
+                     id="line15" />
+                  <line
+                     transform="translate(0,170)"
+                     x2="400"
+                     y2="0"
+                     stroke="#DEDDDD"
+                     stroke-width="1"
+                     opacity="1"
+                     id="line16" />
+                  <line
+                     transform="translate(0,140)"
+                     x2="400"
+                     y2="0"
+                     stroke="#DEDDDD"
+                     stroke-width="1"
+                     opacity="1"
+                     id="line17" />
+                  <line
+                     transform="translate(0,122)"
+                     x2="400"
+                     y2="0"
+                     stroke="#DEDDDD"
+                     stroke-width="1"
+                     opacity="1"
+                     id="line18" />
+                  <line
+                     transform="translate(0,110)"
+                     x2="400"
+                     y2="0"
+                     stroke="#DEDDDD"
+                     stroke-width="1"
+                     opacity="1"
+                     id="line19" />
+                  <line
+                     transform="translate(0,100)"
+                     x2="400"
+                     y2="0"
+                     stroke="#DEDDDD"
+                     stroke-width="1"
+                     opacity="1"
+                     id="line20" />
+                  <line
+                     transform="translate(0,92)"
+                     x2="400"
+                     y2="0"
+                     stroke="#DEDDDD"
+                     stroke-width="1"
+                     opacity="1"
+                     id="line21" />
+                  <line
+                     transform="translate(0,85)"
+                     x2="400"
+                     y2="0"
+                     stroke="#DEDDDD"
+                     stroke-width="1"
+                     opacity="1"
+                     id="line22" />
+                  <line
+                     transform="translate(0,80)"
+                     x2="400"
+                     y2="0"
+                     stroke="#DEDDDD"
+                     stroke-width="1"
+                     opacity="1"
+                     id="line23" />
+                  <line
+                     transform="translate(0,74)"
+                     x2="400"
+                     y2="0"
+                     stroke="#DEDDDD"
+                     stroke-width="1"
+                     opacity="1"
+                     id="line24" />
+                  <line
+                     transform="translate(0,70)"
+                     x2="400"
+                     y2="0"
+                     stroke="#DEDDDD"
+                     stroke-width="1"
+                     opacity="1"
+                     id="line25" />
+                  <line
+                     transform="translate(0,40)"
+                     x2="400"
+                     y2="0"
+                     stroke="#DEDDDD"
+                     stroke-width="1"
+                     opacity="1"
+                     id="line26" />
+                  <line
+                     transform="translate(0,22)"
+                     x2="400"
+                     y2="0"
+                     stroke="#DEDDDD"
+                     stroke-width="1"
+                     opacity="1"
+                     id="line27" />
+                  <line
+                     transform="translate(0,10)"
+                     x2="400"
+                     y2="0"
+                     stroke="#DEDDDD"
+                     stroke-width="1"
+                     opacity="1"
+                     id="line28" />
+                  <line
+                     transform="translate(0,0)"
+                     x2="400"
+                     y2="0"
+                     stroke="#DEDDDD"
+                     stroke-width="1"
+                     opacity="1"
+                     id="line29" />
+                </g>
+              </g>
+              <path
+                 class="foreground"
+                 aria-hidden="true"
+                 d=""
+                 pointer-events="none"
+                 display="none"
+                 id="path30" />
+            </g>
+          </g>
+          <g
+             class="mark-group role-axis"
+             role="graphics-symbol"
+             aria-roledescription="axis"
+             aria-label="X-axis titled 'Energy reduction after the optimization (lower is better)' for a linear scale with values from 0.4 to 1.3"
+             id="g55">
+            <g
+               transform="translate(0.5,300.5)"
+               id="g54">
+              <path
+                 class="background"
+                 aria-hidden="true"
+                 d="M0,0h0v0h0Z"
+                 pointer-events="none"
+                 id="path32" />
+              <g
+                 id="g53">
+                <g
+                   class="mark-rule role-axis-tick"
+                   pointer-events="none"
+                   id="g41">
+                  <line
+                     transform="translate(0,0)"
+                     x2="0"
+                     y2="5"
+                     stroke="#000000"
+                     stroke-width="1"
+                     opacity="1"
+                     id="line32" />
+                  <line
+                     transform="translate(44,0)"
+                     x2="0"
+                     y2="5"
+                     stroke="#000000"
+                     stroke-width="1"
+                     opacity="1"
+                     id="line33" />
+                  <line
+                     transform="translate(89,0)"
+                     x2="0"
+                     y2="5"
+                     stroke="#000000"
+                     stroke-width="1"
+                     opacity="1"
+                     id="line34" />
+                  <line
+                     transform="translate(133,0)"
+                     x2="0"
+                     y2="5"
+                     stroke="#000000"
+                     stroke-width="1"
+                     opacity="1"
+                     id="line35" />
+                  <line
+                     transform="translate(178,0)"
+                     x2="0"
+                     y2="5"
+                     stroke="#000000"
+                     stroke-width="1"
+                     opacity="1"
+                     id="line36" />
+                  <line
+                     transform="translate(222,0)"
+                     x2="0"
+                     y2="5"
+                     stroke="#000000"
+                     stroke-width="1"
+                     opacity="1"
+                     id="line37" />
+                  <line
+                     transform="translate(267,0)"
+                     x2="0"
+                     y2="5"
+                     stroke="#000000"
+                     stroke-width="1"
+                     opacity="1"
+                     id="line38" />
+                  <line
+                     transform="translate(311,0)"
+                     x2="0"
+                     y2="5"
+                     stroke="#000000"
+                     stroke-width="1"
+                     opacity="1"
+                     id="line39" />
+                  <line
+                     transform="translate(356,0)"
+                     x2="0"
+                     y2="5"
+                     stroke="#000000"
+                     stroke-width="1"
+                     opacity="1"
+                     id="line40" />
+                  <line
+                     transform="translate(400,0)"
+                     x2="0"
+                     y2="5"
+                     stroke="#000000"
+                     stroke-width="1"
+                     opacity="1"
+                     id="line41" />
+                </g>
+                <g
+                   class="mark-text role-axis-label"
+                   pointer-events="none"
+                   id="g50">
+                  <text
+                     text-anchor="start"
+                     transform="translate(0,15)"
+                     font-family="Special Gothic"
+                     font-size="10px"
+                     fill="#000"
+                     opacity="1"
+                     id="text41">0.4</text>
+                  <text
+                     text-anchor="middle"
+                     transform="translate(44.44444444444443,15)"
+                     font-family="Special Gothic"
+                     font-size="10px"
+                     fill="#000"
+                     opacity="1"
+                     id="text42">0.5</text>
+                  <text
+                     text-anchor="middle"
+                     transform="translate(88.88888888888886,15)"
+                     font-family="Special Gothic"
+                     font-size="10px"
+                     fill="#000"
+                     opacity="1"
+                     id="text43">0.6</text>
+                  <text
+                     text-anchor="middle"
+                     transform="translate(133.33333333333331,15)"
+                     font-family="Special Gothic"
+                     font-size="10px"
+                     fill="#000"
+                     opacity="1"
+                     id="text44">0.7</text>
+                  <text
+                     text-anchor="middle"
+                     transform="translate(177.7777777777778,15)"
+                     font-family="Special Gothic"
+                     font-size="10px"
+                     fill="#000"
+                     opacity="1"
+                     id="text45">0.8</text>
+                  <text
+                     text-anchor="middle"
+                     transform="translate(222.22222222222223,15)"
+                     font-family="Special Gothic"
+                     font-size="10px"
+                     fill="#000"
+                     opacity="1"
+                     id="text46">0.9</text>
+                  <text
+                     text-anchor="middle"
+                     transform="translate(266.66666666666663,15)"
+                     font-family="Special Gothic"
+                     font-size="10px"
+                     fill="#000"
+                     opacity="1"
+                     id="text47">1.0</text>
+                  <text
+                     text-anchor="middle"
+                     transform="translate(311.11111111111114,15)"
+                     font-family="Special Gothic"
+                     font-size="10px"
+                     fill="#000"
+                     opacity="1"
+                     id="text48">1.1</text>
+                  <text
+                     text-anchor="middle"
+                     transform="translate(355.55555555555554,15)"
+                     font-family="Special Gothic"
+                     font-size="10px"
+                     fill="#000"
+                     opacity="1"
+                     id="text49">1.2</text>
+                  <text
+                     text-anchor="end"
+                     transform="translate(400,15)"
+                     font-family="Special Gothic"
+                     font-size="10px"
+                     fill="#000"
+                     opacity="1"
+                     id="text50">1.3</text>
+                </g>
+                <g
+                   class="mark-rule role-axis-domain"
+                   pointer-events="none"
+                   id="g51">
+                  <line
+                     transform="translate(0,0)"
+                     x2="400"
+                     y2="0"
+                     stroke="#000000"
+                     stroke-width="1"
+                     opacity="1"
+                     id="line50" />
+                </g>
+                <g
+                   class="mark-text role-axis-title"
+                   pointer-events="none"
+                   id="g52">
+                  <text
+                     text-anchor="middle"
+                     transform="translate(200,36)"
+                     font-family="Special Gothic"
+                     font-size="12px"
+                     font-weight="500"
+                     fill="#000"
+                     opacity="1"
+                     id="text51">Energy reduction after the optimization (lower is better)</text>
+                </g>
+              </g>
+              <path
+                 class="foreground"
+                 aria-hidden="true"
+                 d=""
+                 pointer-events="none"
+                 display="none"
+                 id="path53" />
+            </g>
+          </g>
+          <g
+             class="mark-group role-axis"
+             role="graphics-symbol"
+             aria-roledescription="axis"
+             aria-label="Y-axis titled 'Cumulative energy cost of one optimization (Wh)' for a log scale with values from 0.05 to 50"
+             id="g86">
+            <g
+               transform="translate(0.5,0.5)"
+               id="g85">
+              <path
+                 class="background"
+                 aria-hidden="true"
+                 d="M0,0h0v0h0Z"
+                 pointer-events="none"
+                 id="path55" />
+              <g
+                 id="g84">
+                <g
+                   class="mark-text role-axis-label"
+                   pointer-events="none"
+                   id="g82">
+                  <text
+                     text-anchor="end"
+                     transform="translate(-8,304)"
+                     font-family="Special Gothic"
+                     font-size="12px"
+                     fill="#000"
+                     opacity="1"
+                     id="text55" />
+                  <text
+                     text-anchor="end"
+                     transform="translate(-8,296.0818753952375)"
+                     font-family="Special Gothic"
+                     font-size="12px"
+                     fill="#000"
+                     opacity="1"
+                     id="text56" />
+                  <text
+                     text-anchor="end"
+                     transform="translate(-8,289.3871964321762)"
+                     font-family="Special Gothic"
+                     font-size="12px"
+                     fill="#000"
+                     opacity="1"
+                     id="text57" />
+                  <text
+                     text-anchor="end"
+                     transform="translate(-8,283.5880017344075)"
+                     font-family="Special Gothic"
+                     font-size="12px"
+                     fill="#000"
+                     opacity="1"
+                     id="text58" />
+                  <text
+                     text-anchor="end"
+                     transform="translate(-8,278.4727494896694)"
+                     font-family="Special Gothic"
+                     font-size="12px"
+                     fill="#000"
+                     opacity="1"
+                     id="text59" />
+                  <text
+                     text-anchor="end"
+                     transform="translate(-8,273.8970004336019)"
+                     font-family="Special Gothic"
+                     font-size="12px"
+                     fill="#000"
+                     opacity="1"
+                     id="text60">0.1</text>
+                  <text
+                     text-anchor="end"
+                     transform="translate(-8,243.79400086720378)"
+                     font-family="Special Gothic"
+                     font-size="12px"
+                     fill="#000"
+                     opacity="1"
+                     id="text61">0.2</text>
+                  <text
+                     text-anchor="end"
+                     transform="translate(-8,226.18487496163564)"
+                     font-family="Special Gothic"
+                     font-size="12px"
+                     fill="#000"
+                     opacity="1"
+                     id="text62">0.3</text>
+                  <text
+                     text-anchor="end"
+                     transform="translate(-8,213.69100130080562)"
+                     font-family="Special Gothic"
+                     font-size="12px"
+                     fill="#000"
+                     opacity="1"
+                     id="text63" />
+                  <text
+                     text-anchor="end"
+                     transform="translate(-8,204.00000000000003)"
+                     font-family="Special Gothic"
+                     font-size="12px"
+                     fill="#000"
+                     opacity="1"
+                     id="text64" />
+                  <text
+                     text-anchor="end"
+                     transform="translate(-8,196.08187539523755)"
+                     font-family="Special Gothic"
+                     font-size="12px"
+                     fill="#000"
+                     opacity="1"
+                     id="text65" />
+                  <text
+                     text-anchor="end"
+                     transform="translate(-8,189.3871964321762)"
+                     font-family="Special Gothic"
+                     font-size="12px"
+                     fill="#000"
+                     opacity="1"
+                     id="text66" />
+                  <text
+                     text-anchor="end"
+                     transform="translate(-8,183.58800173440756)"
+                     font-family="Special Gothic"
+                     font-size="12px"
+                     fill="#000"
+                     opacity="1"
+                     id="text67" />
+                  <text
+                     text-anchor="end"
+                     transform="translate(-8,178.47274948966938)"
+                     font-family="Special Gothic"
+                     font-size="12px"
+                     fill="#000"
+                     opacity="1"
+                     id="text68" />
+                  <text
+                     text-anchor="end"
+                     transform="translate(-8,173.89700043360187)"
+                     font-family="Special Gothic"
+                     font-size="12px"
+                     fill="#000"
+                     opacity="1"
+                     id="text69">1</text>
+                  <text
+                     text-anchor="end"
+                     transform="translate(-8,143.79400086720375)"
+                     font-family="Special Gothic"
+                     font-size="12px"
+                     fill="#000"
+                     opacity="1"
+                     id="text70">2</text>
+                  <text
+                     text-anchor="end"
+                     transform="translate(-8,126.18487496163564)"
+                     font-family="Special Gothic"
+                     font-size="12px"
+                     fill="#000"
+                     opacity="1"
+                     id="text71">3</text>
+                  <text
+                     text-anchor="end"
+                     transform="translate(-8,113.69100130080565)"
+                     font-family="Special Gothic"
+                     font-size="12px"
+                     fill="#000"
+                     opacity="1"
+                     id="text72" />
+                  <text
+                     text-anchor="end"
+                     transform="translate(-8,104.00000000000001)"
+                     font-family="Special Gothic"
+                     font-size="12px"
+                     fill="#000"
+                     opacity="1"
+                     id="text73" />
+                  <text
+                     text-anchor="end"
+                     transform="translate(-8,96.08187539523752)"
+                     font-family="Special Gothic"
+                     font-size="12px"
+                     fill="#000"
+                     opacity="1"
+                     id="text74" />
+                  <text
+                     text-anchor="end"
+                     transform="translate(-8,89.3871964321762)"
+                     font-family="Special Gothic"
+                     font-size="12px"
+                     fill="#000"
+                     opacity="1"
+                     id="text75" />
+                  <text
+                     text-anchor="end"
+                     transform="translate(-8,83.58800173440753)"
+                     font-family="Special Gothic"
+                     font-size="12px"
+                     fill="#000"
+                     opacity="1"
+                     id="text76" />
+                  <text
+                     text-anchor="end"
+                     transform="translate(-8,78.4727494896694)"
+                     font-family="Special Gothic"
+                     font-size="12px"
+                     fill="#000"
+                     opacity="1"
+                     id="text77" />
+                  <text
+                     text-anchor="end"
+                     transform="translate(-8,73.89700043360186)"
+                     font-family="Special Gothic"
+                     font-size="12px"
+                     fill="#000"
+                     opacity="1"
+                     id="text78">10</text>
+                  <text
+                     text-anchor="end"
+                     transform="translate(-8,43.79400086720375)"
+                     font-family="Special Gothic"
+                     font-size="12px"
+                     fill="#000"
+                     opacity="1"
+                     id="text79">20</text>
+                  <text
+                     text-anchor="end"
+                     transform="translate(-8,26.184874961635625)"
+                     font-family="Special Gothic"
+                     font-size="12px"
+                     fill="#000"
+                     opacity="1"
+                     id="text80">30</text>
+                  <text
+                     text-anchor="end"
+                     transform="translate(-8,13.691001300805635)"
+                     font-family="Special Gothic"
+                     font-size="12px"
+                     fill="#000"
+                     opacity="1"
+                     id="text81" />
+                  <text
+                     text-anchor="end"
+                     transform="translate(-8,4)"
+                     font-family="Special Gothic"
+                     font-size="12px"
+                     fill="#000"
+                     opacity="1"
+                     id="text82" />
+                </g>
+                <g
+                   class="mark-text role-axis-title"
+                   pointer-events="none"
+                   id="g83">
+                  <text
+                     text-anchor="start"
+                     transform="translate(-34.82400131225586,-18)"
+                     font-family="Special Gothic"
+                     font-size="12px"
+                     font-weight="500"
+                     fill="#000"
+                     opacity="1"
+                     id="text83">Cumulative energy cost of one optimization (Wh)</text>
+                </g>
+              </g>
+              <path
+                 class="foreground"
+                 aria-hidden="true"
+                 d=""
+                 pointer-events="none"
+                 display="none"
+                 id="path84" />
+            </g>
+          </g>
+          <g
+             class="mark-symbol role-mark marks"
+             role="graphics-object"
+             aria-roledescription="symbol mark container"
+             id="g125">
+            <path
+               aria-label="Energy reduction after the optimization (lower is better): 0.591; Cumulative energy cost of one optimization (Wh): 4.185; model: DeepSeek-R1-14B; optimizer: CoD; BEP: 234372"
+               role="graphics-symbol"
+               aria-roledescription="point"
+               transform="translate(84.88888888888886,107.72745420067402)"
+               d="M5,0A5,5,0,1,1,-5,0A5,5,0,1,1,5,0"
+               fill="#4c78a8"
+               stroke-width="2"
+               opacity="0.7"
+               id="path86" />
+            <path
+               aria-label="Energy reduction after the optimization (lower is better): 0.675; Cumulative energy cost of one optimization (Wh): 4.75; model: DeepSeek-R1-14B; optimizer: CoT; BEP: 348819"
+               role="graphics-symbol"
+               aria-roledescription="point"
+               transform="translate(122.22222222222223,102.22763947111521)"
+               d="M5,0A5,5,0,1,1,-5,0A5,5,0,1,1,5,0"
+               fill="#4c78a8"
+               stroke-width="2"
+               opacity="0.7"
+               id="path87" />
+            <path
+               aria-label="Energy reduction after the optimization (lower is better): 0.475; Cumulative energy cost of one optimization (Wh): 31.605; model: DeepSeek-R1-14B; optimizer: EoH; BEP: 135327"
+               role="graphics-symbol"
+               aria-roledescription="point"
+               transform="translate(33.333333333333314,19.921420967223725)"
+               d="M5,0A5,5,0,1,1,-5,0A5,5,0,1,1,5,0"
+               fill="#4c78a8"
+               stroke-width="2"
+               opacity="0.7"
+               id="path88" />
+            <path
+               aria-label="Energy reduction after the optimization (lower is better): 0.585; Cumulative energy cost of one optimization (Wh): 13.598; model: DeepSeek-R1-14B; optimizer: LLM4EFFI; BEP: 117288"
+               role="graphics-symbol"
+               aria-roledescription="point"
+               transform="translate(82.2222222222222,56.549496749792624)"
+               d="M5,0A5,5,0,1,1,-5,0A5,5,0,1,1,5,0"
+               fill="#4c78a8"
+               stroke-width="2"
+               opacity="0.7"
+               id="path89" />
+            <path
+               aria-label="Energy reduction after the optimization (lower is better): 0.646; Cumulative energy cost of one optimization (Wh): 5.168; model: DeepSeek-R1-14B; optimizer: Self-Refine-Exec; BEP: 442173"
+               role="graphics-symbol"
+               aria-roledescription="point"
+               transform="translate(109.33333333333333,98.56474993489911)"
+               d="M5,0A5,5,0,1,1,-5,0A5,5,0,1,1,5,0"
+               fill="#4c78a8"
+               stroke-width="2"
+               opacity="0.7"
+               id="path90" />
+            <path
+               aria-label="Energy reduction after the optimization (lower is better): 0.764; Cumulative energy cost of one optimization (Wh): 6.245; model: DeepSeek-R1-14B; optimizer: Self-Refine-NL; BEP: 651345"
+               role="graphics-symbol"
+               aria-roledescription="point"
+               transform="translate(161.77777777777777,90.34375616258644)"
+               d="M5,0A5,5,0,1,1,-5,0A5,5,0,1,1,5,0"
+               fill="#4c78a8"
+               stroke-width="2"
+               opacity="0.7"
+               id="path91" />
+            <path
+               aria-label="Energy reduction after the optimization (lower is better): 0.668; Cumulative energy cost of one optimization (Wh): 4.64; model: DeepSeek-R1-14B; optimizer: Simple; BEP: 345660"
+               role="graphics-symbol"
+               aria-roledescription="point"
+               transform="translate(119.11111111111113,103.24520237811379)"
+               d="M5,0A5,5,0,1,1,-5,0A5,5,0,1,1,5,0"
+               fill="#4c78a8"
+               stroke-width="2"
+               opacity="0.7"
+               id="path92" />
+            <path
+               aria-label="Energy reduction after the optimization (lower is better): 0.664; Cumulative energy cost of one optimization (Wh): 15.125; model: DeepSeek-R1-14B; optimizer: Simple10; BEP: 186420"
+               role="graphics-symbol"
+               aria-roledescription="point"
+               transform="translate(117.33333333333333,51.927462101151235)"
+               d="M5,0A5,5,0,1,1,-5,0A5,5,0,1,1,5,0"
+               fill="#4c78a8"
+               stroke-width="2"
+               opacity="0.7"
+               id="path93" />
+            <path
+               aria-label="Energy reduction after the optimization (lower is better): 0.801; Cumulative energy cost of one optimization (Wh): 0.071; model: Qwen2.5-Coder-14B; optimizer: CoD; BEP: 13169"
+               role="graphics-symbol"
+               aria-roledescription="point"
+               transform="translate(178.22222222222223,284.7711655616944)"
+               d="M5,0A5,5,0,1,1,-5,0A5,5,0,1,1,5,0"
+               fill="#4c78a8"
+               stroke-width="2"
+               opacity="0.7"
+               id="path94" />
+            <path
+               aria-label="Energy reduction after the optimization (lower is better): 0.975; Cumulative energy cost of one optimization (Wh): 0.152; model: Qwen2.5-Coder-14B; optimizer: CoT; BEP: 24475"
+               role="graphics-symbol"
+               aria-roledescription="point"
+               transform="translate(255.55555555555554,251.71264163912463)"
+               d="M5,0A5,5,0,1,1,-5,0A5,5,0,1,1,5,0"
+               fill="#4c78a8"
+               stroke-width="2"
+               opacity="0.7"
+               id="path95" />
+            <path
+               aria-label="Energy reduction after the optimization (lower is better): 0.603; Cumulative energy cost of one optimization (Wh): 6.555; model: Qwen2.5-Coder-14B; optimizer: EoH; BEP: 48986"
+               role="graphics-symbol"
+               aria-roledescription="point"
+               transform="translate(90.2222222222222,88.23973083099156)"
+               d="M5,0A5,5,0,1,1,-5,0A5,5,0,1,1,5,0"
+               fill="#4c78a8"
+               stroke-width="2"
+               opacity="0.7"
+               id="path96" />
+            <path
+               aria-label="Energy reduction after the optimization (lower is better): 0.675; Cumulative energy cost of one optimization (Wh): 2.469; model: Qwen2.5-Coder-14B; optimizer: LLM4EFFI; BEP: 35826"
+               role="graphics-symbol"
+               aria-roledescription="point"
+               transform="translate(122.22222222222223,130.64489144040866)"
+               d="M5,0A5,5,0,1,1,-5,0A5,5,0,1,1,5,0"
+               fill="#4c78a8"
+               stroke-width="2"
+               opacity="0.7"
+               id="path97" />
+            <path
+               aria-label="Energy reduction after the optimization (lower is better): 0.882; Cumulative energy cost of one optimization (Wh): 0.087; model: Qwen2.5-Coder-14B; optimizer: Self-Refine-Exec; BEP: 14051"
+               role="graphics-symbol"
+               aria-roledescription="point"
+               transform="translate(214.22222222222223,275.94507517174003)"
+               d="M5,0A5,5,0,1,1,-5,0A5,5,0,1,1,5,0"
+               fill="#4c78a8"
+               stroke-width="2"
+               opacity="0.7"
+               id="path98" />
+            <path
+               aria-label="Energy reduction after the optimization (lower is better): 0.903; Cumulative energy cost of one optimization (Wh): 0.279; model: Qwen2.5-Coder-14B; optimizer: Self-Refine-NL; BEP: 63598"
+               role="graphics-symbol"
+               aria-roledescription="point"
+               transform="translate(223.55555555555554,225.3365801062421)"
+               d="M5,0A5,5,0,1,1,-5,0A5,5,0,1,1,5,0"
+               fill="#4c78a8"
+               stroke-width="2"
+               opacity="0.7"
+               id="path99" />
+            <path
+               aria-label="Energy reduction after the optimization (lower is better): 0.791; Cumulative energy cost of one optimization (Wh): 0.142; model: Qwen2.5-Coder-14B; optimizer: Simple; BEP: 17891"
+               role="graphics-symbol"
+               aria-roledescription="point"
+               transform="translate(173.7777777777778,254.66816599529622)"
+               d="M5,0A5,5,0,1,1,-5,0A5,5,0,1,1,5,0"
+               fill="#4c78a8"
+               stroke-width="2"
+               opacity="0.7"
+               id="path100" />
+            <path
+               aria-label="Energy reduction after the optimization (lower is better): 0.779; Cumulative energy cost of one optimization (Wh): 1.44; model: Qwen2.5-Coder-14B; optimizer: Simple10; BEP: 224861"
+               role="graphics-symbol"
+               aria-roledescription="point"
+               transform="translate(168.44444444444443,154.0607512240769)"
+               d="M5,0A5,5,0,1,1,-5,0A5,5,0,1,1,5,0"
+               fill="#4c78a8"
+               stroke-width="2"
+               opacity="0.7"
+               id="path101" />
+            <path
+               aria-label="Energy reduction after the optimization (lower is better): 0.909; Cumulative energy cost of one optimization (Wh): 0.102; model: Qwen2.5-Coder-3B; optimizer: CoD; BEP: 22540"
+               role="graphics-symbol"
+               aria-roledescription="point"
+               transform="translate(226.22222222222223,269.03698325741016)"
+               d="M5,0A5,5,0,1,1,-5,0A5,5,0,1,1,5,0"
+               fill="#4c78a8"
+               stroke-width="2"
+               opacity="0.7"
+               id="path102" />
+            <path
+               aria-label="Energy reduction after the optimization (lower is better): 1.028; Cumulative energy cost of one optimization (Wh): 0.183; model: Qwen2.5-Coder-3B; optimizer: CoT; BEP: 31866"
+               role="graphics-symbol"
+               aria-roledescription="point"
+               transform="translate(279.1111111111111,243.65189146055891)"
+               d="M5,0A5,5,0,1,1,-5,0A5,5,0,1,1,5,0"
+               fill="#4c78a8"
+               stroke-width="2"
+               opacity="0.7"
+               id="path103" />
+            <path
+               aria-label="Energy reduction after the optimization (lower is better): 0.752; Cumulative energy cost of one optimization (Wh): 4.006; model: Qwen2.5-Coder-3B; optimizer: EoH; BEP: 51865"
+               role="graphics-symbol"
+               aria-roledescription="point"
+               transform="translate(156.44444444444443,109.62590593784616)"
+               d="M5,0A5,5,0,1,1,-5,0A5,5,0,1,1,5,0"
+               fill="#4c78a8"
+               stroke-width="2"
+               opacity="0.7"
+               id="path104" />
+            <path
+               aria-label="Energy reduction after the optimization (lower is better): 1.008; Cumulative energy cost of one optimization (Wh): 3.896; model: Qwen2.5-Coder-3B; optimizer: LLM4EFFI; BEP: 107362"
+               role="graphics-symbol"
+               aria-roledescription="point"
+               transform="translate(270.22222222222223,110.8351056129441)"
+               d="M5,0A5,5,0,1,1,-5,0A5,5,0,1,1,5,0"
+               fill="#4c78a8"
+               stroke-width="2"
+               opacity="0.7"
+               id="path105" />
+            <path
+               aria-label="Energy reduction after the optimization (lower is better): 1.099; Cumulative energy cost of one optimization (Wh): 0.1; model: Qwen2.5-Coder-3B; optimizer: Self-Refine-Exec; BEP: 42329"
+               role="graphics-symbol"
+               aria-roledescription="point"
+               transform="translate(310.66666666666663,269.8970004336019)"
+               d="M5,0A5,5,0,1,1,-5,0A5,5,0,1,1,5,0"
+               fill="#4c78a8"
+               stroke-width="2"
+               opacity="0.7"
+               id="path106" />
+            <path
+               aria-label="Energy reduction after the optimization (lower is better): 1.253; Cumulative energy cost of one optimization (Wh): 0.24; model: Qwen2.5-Coder-3B; optimizer: Self-Refine-NL; BEP: 66411"
+               role="graphics-symbol"
+               aria-roledescription="point"
+               transform="translate(379.11111111111103,231.8758762624413)"
+               d="M5,0A5,5,0,1,1,-5,0A5,5,0,1,1,5,0"
+               fill="#4c78a8"
+               stroke-width="2"
+               opacity="0.7"
+               id="path107" />
+            <path
+               aria-label="Energy reduction after the optimization (lower is better): 1.122; Cumulative energy cost of one optimization (Wh): 0.14; model: Qwen2.5-Coder-3B; optimizer: Simple; BEP: 18864"
+               role="graphics-symbol"
+               aria-roledescription="point"
+               transform="translate(320.8888888888889,255.2841968657781)"
+               d="M5,0A5,5,0,1,1,-5,0A5,5,0,1,1,5,0"
+               fill="#4c78a8"
+               stroke-width="2"
+               opacity="0.7"
+               id="path108" />
+            <path
+               aria-label="Energy reduction after the optimization (lower is better): 1.251; Cumulative energy cost of one optimization (Wh): 0.802; model: Qwen2.5-Coder-3B; optimizer: Simple10; BEP: 121012"
+               role="graphics-symbol"
+               aria-roledescription="point"
+               transform="translate(378.2222222222222,179.47956360518555)"
+               d="M5,0A5,5,0,1,1,-5,0A5,5,0,1,1,5,0"
+               fill="#4c78a8"
+               stroke-width="2"
+               opacity="0.7"
+               id="path109" />
+            <path
+               aria-label="Energy reduction after the optimization (lower is better): 0.769; Cumulative energy cost of one optimization (Wh): 0.118; model: Qwen2.5-Coder-7B; optimizer: CoD; BEP: 13917"
+               role="graphics-symbol"
+               aria-roledescription="point"
+               transform="translate(164,262.7087997029893)"
+               d="M5,0A5,5,0,1,1,-5,0A5,5,0,1,1,5,0"
+               fill="#4c78a8"
+               stroke-width="2"
+               opacity="0.7"
+               id="path110" />
+            <path
+               aria-label="Energy reduction after the optimization (lower is better): 0.96; Cumulative energy cost of one optimization (Wh): 0.281; model: Qwen2.5-Coder-7B; optimizer: CoT; BEP: 31177"
+               role="graphics-symbol"
+               aria-roledescription="point"
+               transform="translate(248.88888888888886,225.02636844309387)"
+               d="M5,0A5,5,0,1,1,-5,0A5,5,0,1,1,5,0"
+               fill="#4c78a8"
+               stroke-width="2"
+               opacity="0.7"
+               id="path111" />
+            <path
+               aria-label="Energy reduction after the optimization (lower is better): 0.741; Cumulative energy cost of one optimization (Wh): 4.548; model: Qwen2.5-Coder-7B; optimizer: EoH; BEP: 47083"
+               role="graphics-symbol"
+               aria-roledescription="point"
+               transform="translate(151.55555555555554,104.11495483203215)"
+               d="M5,0A5,5,0,1,1,-5,0A5,5,0,1,1,5,0"
+               fill="#4c78a8"
+               stroke-width="2"
+               opacity="0.7"
+               id="path112" />
+            <path
+               aria-label="Energy reduction after the optimization (lower is better): 0.739; Cumulative energy cost of one optimization (Wh): 1.63; model: Qwen2.5-Coder-7B; optimizer: LLM4EFFI; BEP: 30755"
+               role="graphics-symbol"
+               aria-roledescription="point"
+               transform="translate(150.66666666666663,148.67823999320612)"
+               d="M5,0A5,5,0,1,1,-5,0A5,5,0,1,1,5,0"
+               fill="#4c78a8"
+               stroke-width="2"
+               opacity="0.7"
+               id="path113" />
+            <path
+               aria-label="Energy reduction after the optimization (lower is better): 0.859; Cumulative energy cost of one optimization (Wh): 0.122; model: Qwen2.5-Coder-7B; optimizer: Self-Refine-Exec; BEP: 28554"
+               role="graphics-symbol"
+               aria-roledescription="point"
+               transform="translate(203.99999999999997,261.2610173661271)"
+               d="M5,0A5,5,0,1,1,-5,0A5,5,0,1,1,5,0"
+               fill="#4c78a8"
+               stroke-width="2"
+               opacity="0.7"
+               id="path114" />
+            <path
+               aria-label="Energy reduction after the optimization (lower is better): 0.895; Cumulative energy cost of one optimization (Wh): 0.255; model: Qwen2.5-Coder-7B; optimizer: Self-Refine-NL; BEP: 55592"
+               role="graphics-symbol"
+               aria-roledescription="point"
+               transform="translate(219.99999999999997,229.24298239020635)"
+               d="M5,0A5,5,0,1,1,-5,0A5,5,0,1,1,5,0"
+               fill="#4c78a8"
+               stroke-width="2"
+               opacity="0.7"
+               id="path115" />
+            <path
+               aria-label="Energy reduction after the optimization (lower is better): 0.833; Cumulative energy cost of one optimization (Wh): 0.137; model: Qwen2.5-Coder-7B; optimizer: Simple; BEP: 16248"
+               role="graphics-symbol"
+               aria-roledescription="point"
+               transform="translate(192.44444444444443,256.2249437179612)"
+               d="M5,0A5,5,0,1,1,-5,0A5,5,0,1,1,5,0"
+               fill="#4c78a8"
+               stroke-width="2"
+               opacity="0.7"
+               id="path116" />
+            <path
+               aria-label="Energy reduction after the optimization (lower is better): 1.037; Cumulative energy cost of one optimization (Wh): 0.784; model: Qwen2.5-Coder-7B; optimizer: Simple10; BEP: 105395"
+               role="graphics-symbol"
+               aria-roledescription="point"
+               transform="translate(283.11111111111103,180.46539416515805)"
+               d="M5,0A5,5,0,1,1,-5,0A5,5,0,1,1,5,0"
+               fill="#4c78a8"
+               stroke-width="2"
+               opacity="0.7"
+               id="path117" />
+            <path
+               aria-label="Energy reduction after the optimization (lower is better): 0.943; Cumulative energy cost of one optimization (Wh): 0.239; model: StarCoder2; optimizer: CoD; BEP: 31429"
+               role="graphics-symbol"
+               aria-roledescription="point"
+               transform="translate(241.33333333333331,232.0572103387881)"
+               d="M5,0A5,5,0,1,1,-5,0A5,5,0,1,1,5,0"
+               fill="#4c78a8"
+               stroke-width="2"
+               opacity="0.7"
+               id="path118" />
+            <path
+               aria-label="Energy reduction after the optimization (lower is better): 0.925; Cumulative energy cost of one optimization (Wh): 0.249; model: StarCoder2; optimizer: CoT; BEP: 43014"
+               role="graphics-symbol"
+               aria-roledescription="point"
+               transform="translate(233.33333333333334,230.27706572402826)"
+               d="M5,0A5,5,0,1,1,-5,0A5,5,0,1,1,5,0"
+               fill="#4c78a8"
+               stroke-width="2"
+               opacity="0.7"
+               id="path119" />
+            <path
+               aria-label="Energy reduction after the optimization (lower is better): 0.747; Cumulative energy cost of one optimization (Wh): 4.209; model: StarCoder2; optimizer: EoH; BEP: 42241"
+               role="graphics-symbol"
+               aria-roledescription="point"
+               transform="translate(154.22222222222223,107.47910785879964)"
+               d="M5,0A5,5,0,1,1,-5,0A5,5,0,1,1,5,0"
+               fill="#4c78a8"
+               stroke-width="2"
+               opacity="0.7"
+               id="path120" />
+            <path
+               aria-label="Energy reduction after the optimization (lower is better): 0.788; Cumulative energy cost of one optimization (Wh): 7.051; model: StarCoder2; optimizer: LLM4EFFI; BEP: 133515"
+               role="graphics-symbol"
+               aria-roledescription="point"
+               transform="translate(172.44444444444446,85.07192896589764)"
+               d="M5,0A5,5,0,1,1,-5,0A5,5,0,1,1,5,0"
+               fill="#4c78a8"
+               stroke-width="2"
+               opacity="0.7"
+               id="path121" />
+            <path
+               aria-label="Energy reduction after the optimization (lower is better): 0.621; Cumulative energy cost of one optimization (Wh): 0.252; model: StarCoder2; optimizer: Self-Refine-Exec; BEP: 22460"
+               role="graphics-symbol"
+               aria-roledescription="point"
+               transform="translate(98.22222222222221,229.75694635544747)"
+               d="M5,0A5,5,0,1,1,-5,0A5,5,0,1,1,5,0"
+               fill="#4c78a8"
+               stroke-width="2"
+               opacity="0.7"
+               id="path122" />
+            <path
+               aria-label="Energy reduction after the optimization (lower is better): 0.791; Cumulative energy cost of one optimization (Wh): 0.252; model: StarCoder2; optimizer: Self-Refine-NL; BEP: 31470"
+               role="graphics-symbol"
+               aria-roledescription="point"
+               transform="translate(173.7777777777778,229.75694635544747)"
+               d="M5,0A5,5,0,1,1,-5,0A5,5,0,1,1,5,0"
+               fill="#4c78a8"
+               stroke-width="2"
+               opacity="0.7"
+               id="path123" />
+            <path
+               aria-label="Energy reduction after the optimization (lower is better): 1.057; Cumulative energy cost of one optimization (Wh): 0.238; model: StarCoder2; optimizer: Simple; BEP: 60471"
+               role="graphics-symbol"
+               aria-roledescription="point"
+               transform="translate(291.99999999999994,232.2393047279507)"
+               d="M5,0A5,5,0,1,1,-5,0A5,5,0,1,1,5,0"
+               fill="#4c78a8"
+               stroke-width="2"
+               opacity="0.7"
+               id="path124" />
+            <path
+               aria-label="Energy reduction after the optimization (lower is better): 1.107; Cumulative energy cost of one optimization (Wh): 0.881; model: StarCoder2; optimizer: Simple10; BEP: 141999"
+               role="graphics-symbol"
+               aria-roledescription="point"
+               transform="translate(314.2222222222222,175.39940959239706)"
+               d="M5,0A5,5,0,1,1,-5,0A5,5,0,1,1,5,0"
+               fill="#4c78a8"
+               stroke-width="2"
+               opacity="0.7"
+               id="path125" />
+          </g>
+        </g>
+        <path
+           class="foreground"
+           aria-hidden="true"
+           d=""
+           display="none"
+           id="path126" />
+      </g>
+    </g>
+  </g>
+</svg>

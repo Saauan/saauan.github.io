@@ -7,14 +7,14 @@
   scholar: https://scholar.google.com/citations?user=YbTlbjMAAAAJ&hl=fr&oi=ao
   cv: papers/cv.pdf
   # Change the items in "education" you have (up to 6)
-  education:
-    [
+  education: [
       #"(1942) Ph.D. Physics, Princeton University",
+      "(2025) Ph.D in Computer Science, University of Lille",
       "(2022) Master's Degree in Software Engineering, University of Lille",
     ]
 
-  educationshort:
-    [
-    #"(1942) Ph.D. Physics, Princeton", 
-    "(2022) Master's Degree in Software Engineering, University of Lille",
+  educationshort: [
+      #"(1942) Ph.D. Physics, Princeton",
+      "(2025) Ph.D in Computer Science, University of Lille",
+      "(2022) Master's Degree in Software Engineering, University of Lille",
     ]
