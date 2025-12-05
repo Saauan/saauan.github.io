@@ -27,6 +27,8 @@ permalink: /talks/
 - A performance Study of LLM-Generated Code on Leetcode ~ [EASE 2024](https://conf.researchr.org/home/ease-2024) - [[Slides]](https://slides.com/tristancoignion/ease-2024)
 - A performance Study of LLM-Generated Code on Leetcode ~ [Green Days 2024](https://perso.ens-lyon.fr/laurent.lefevre/greendaystoulouse2024/) - [[Slides]](https://slides.com/tristancoignion/a-performance-study)
 
+- Course on the environmental impact of AI (2025) - [[Slides]](./2025-11-ees.pdf)
+
 ## Posters
 
 - Faster Is Not Always Greener: The Costs of LLM-Based Code Optimization ~ Presented at [ASE 2025](https://conf.researchr.org/home/ase-2025) - [[Poster]](../papers/posters/faster-is-not-always-greener.pdf)
