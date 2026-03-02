@@ -7,6 +7,7 @@ permalink: "/post/sora-crawl/"
 excerpt: "As part of a broader study on the environmental impacts of AI video generation, we crawled Sora's public feed to establish a baseline picture of current usage: how much is generated, how often, and with what characteristics."
 description: "Large-scale crawl of Sora's public explore feed to establish a T0 baseline of AI video generation usage, as groundwork for prospective environmental impact modeling."
 tags: Sora AI video-generation crawl environmental-impact sustainability prospective-analysis
+hidden: true
 ---
 
 > This post is a shorter and simpler version of the paper and poster "Scrolling Through Slop: A Large-Scale Analysis of AI Video Generation in the Wild" presented at CHI 2026.
