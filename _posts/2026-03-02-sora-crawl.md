@@ -4,9 +4,9 @@ title: "Scrolling Through Slop: Quantifying AI Video Generation on Sora"
 date: 2026-03-02
 categories: "Fun"
 permalink: "/post/sora-crawl/"
-excerpt: "Sora's public feed promises a new era of creative video. We crawled it, classified thousands of generations, and measured what people actually make — and what the platform actually serves."
-description: "Large-scale analysis of Sora's public explore feed revealing content patterns, prompt strategies, and the prevalence of low-effort AI-generated video."
-tags: Sora AI video-generation slop crawl content-analysis generative-AI
+excerpt: "As part of a broader study on the environmental impacts of AI video generation, we crawled Sora's public feed to establish a baseline picture of current usage: how much is generated, how often, and with what characteristics."
+description: "Large-scale crawl of Sora's public explore feed to establish a T0 baseline of AI video generation usage, as groundwork for prospective environmental impact modeling."
+tags: Sora AI video-generation crawl environmental-impact sustainability prospective-analysis
 ---
 
 > This post is a shorter and simpler version of the paper and poster "Scrolling Through Slop: A Large-Scale Analysis of AI Video Generation in the Wild" presented at CHI 2026.
@@ -15,77 +15,86 @@ tags: Sora AI video-generation slop crawl content-analysis generative-AI
 
 When OpenAI launched Sora's public explore feed, it opened a window into how people actually use text-to-video generation. Not cherry-picked demos. Not curated showcases. Just thousands of generations, scrollable by anyone.
 
-We looked through that window — systematically.
+We looked through that window, systematically.
 
 We crawled Sora's public explore page over several weeks, collected metadata on thousands of generated videos, and asked a straightforward set of questions:
 
-**What are people making? How much of it is low-effort slop? And what patterns emerge when a generative video model meets the general public?**
+**How much video is being generated? What do the prompts and generation parameters look like? And what usage patterns emerge when a frontier video model meets the general public?**
+
+This work is the first step in a larger research effort. Our broader goal is to anticipate the potential environmental impacts of AI video generation. The data collected here serves as a **baseline snapshot (T0)** of current usage, which will feed into prospective and baseline scenarios for future impact modeling. In a companion effort, we also plan to gather energy consumption metrics from open-source video generation models, so that we can model the full life cycle impacts of AI-generated video.
 
 ## Why This Matters
 
 Text-to-video generation has progressed rapidly, but most evaluations happen in controlled settings: benchmark prompts, curated galleries, technical reports. These tell us what models *can* do, not what they *are used for*.
 
-Sora's explore feed changed that. For the first time, a frontier video model had a public, browsable stream of real user generations. This gave us the opportunity to study AI video generation *in the wild* — at scale, with real prompts and real outputs.
+Sora's explore feed changed that. For the first time, a frontier video model had a public, browsable stream of real user generations. This gave us the opportunity to study AI video generation *in the wild*, at scale, with real prompts and real outputs.
 
-Understanding these usage patterns matters for platform design, content moderation, and for anyone trying to separate genuine creative use from low-quality noise.
+Understanding these usage patterns is essential groundwork for environmental impact assessment. Before we can model how much energy AI video generation will consume in the future, we need to know how it is being used today: how frequently, with what parameters, and at what scale.
 
 ## What We Actually Did
 
-Our pipeline had four stages:
+Our pipeline had three stages:
 
 1. **Crawl** the Sora explore feed at regular intervals over several weeks, collecting video metadata, prompts, engagement signals, and generation parameters.
-2. **Classify** each generation along several axes: content category, apparent effort level, prompt complexity, and visual quality.
-3. **Analyze** distributions, temporal patterns, and correlations between prompt characteristics and output quality.
-4. **Compare** what the platform surfaces (trending/featured) versus what users actually generate.
+2. **Characterize** each generation based on available metadata: prompt length, use of style modifiers, resolution, duration, and other generation settings.
+3. **Analyze** distributions, temporal patterns, and correlations between prompt characteristics and generation parameters.
 
-We developed a taxonomy of content types and a lightweight "effort score" combining prompt length, specificity, and use of style modifiers:
-
-<div class="text-center"> $$Effort = f(\text{prompt length},\ \text{specificity},\ \text{style tokens},\ \text{negative prompts})$$
-</div>
+It is important to note what we did *not* do: we did not analyze the visual content of the generated videos themselves. Our analysis is based entirely on metadata and prompt text. As a result, we cannot make claims about the quality, creativity, or effort behind individual generations. What we can characterize is the *scale and shape* of usage.
 
 ## What We Found
 
-### 1. A small number of content categories dominate
+### 1. Prompt characteristics cluster around short, generic descriptions
 
-Over half of all public generations fell into just five categories: nature/landscape scenes, anime-style characters, cinematic slow-motion effects, abstract/surreal imagery, and celebrity likenesses. The long tail of genuinely creative or unusual uses was thin.
+The vast majority of prompts were short. The median prompt length was well below 30 words, and use of specific stylistic or cinematic modifiers was rare. Only a small fraction of prompts showed signs of deliberate prompt engineering (style tokens, negative prompts, explicit aspect ratio or motion instructions).
 
-| ![Distribution of content categories across all crawled generations.](/post-contents/sora-crawl/fig_content_categories.svg) | 
+| ![Distribution of prompt lengths and stylistic modifier usage across all crawled generations.](/post-contents/sora-crawl/fig_prompt_characteristics.svg) | 
 |:--:| 
-| *Distribution of content categories across all crawled generations.* |
+| *Distribution of prompt lengths and stylistic modifier usage across all crawled generations.* |
 
+### 2. A handful of generation parameter settings dominate
 
-### 2. Most generations are low-effort
+Users overwhelmingly stuck with default or near-default generation parameters. A small number of resolution/duration combinations accounted for the bulk of all generations, suggesting that most users do not explore the parameter space extensively.
 
-Using our effort taxonomy, roughly **60–70% of generations** scored in the lowest effort tier: short prompts, no style modifiers, and generic subject matter. These are the "a cat walking on the moon" tier — functional, but not meaningfully creative.
-
-Only about 8% of generations showed evidence of deliberate prompt engineering or iterative refinement.
-
-| ![Distribution of effort scores across generations, broken down by content category.](/post-contents/sora-crawl/fig_effort_distribution.svg) | 
+| ![Distribution of generation parameter combinations (resolution, duration, style preset) across all crawled generations.](/post-contents/sora-crawl/fig_parameter_distribution.svg) | 
 |:--:| 
-| *Distribution of effort scores across generations, broken down by content category.* |
+| *Distribution of generation parameter combinations (resolution, duration, style preset) across all crawled generations.* |
 
-### 3. The explore feed heavily over-represents high-quality outputs
+### 3. The explore feed is not a representative sample
 
-When we compared the full distribution of generations against what appeared on the trending or featured sections, the gap was stark. The platform's curation layer filters aggressively: **featured videos had effort scores 3–4× higher** than the median generation.
+When we compared the metadata distributions of featured/trending videos against the full crawl, clear differences emerged. Featured videos had significantly longer prompts, more frequent use of style modifiers, and less reliance on default parameters. The platform's curation layer filters aggressively, meaning that **scrolling the explore page gives a skewed impression of typical generation behavior**.
 
-This means that scrolling the explore page gives a misleading impression of typical output quality.
-
-| ![Comparison of effort scores between all generations and featured/trending generations.](/post-contents/sora-crawl/fig_featured_vs_all.svg) | 
+| ![Comparison of prompt characteristics between all generations and featured/trending generations.](/post-contents/sora-crawl/fig_featured_vs_all.svg) | 
 |:--:| 
-| *Comparison of effort scores between all generations and featured/trending generations.* |
+| *Comparison of prompt characteristics between all generations and featured/trending generations.* |
 
-### 4. Prompt length correlates weakly with visual quality
+### 4. Generation volume follows strong temporal patterns
 
-Longer prompts did tend to produce slightly higher-quality outputs, but the relationship was noisy. Beyond ~40 words, additional prompt length showed diminishing returns. The strongest predictor of visual quality was the use of specific cinematic or stylistic terms, not raw verbosity.
-
-### 5. Generation volume follows strong temporal patterns
-
-Activity spiked predictably around product announcements and social media virality cycles, then decayed rapidly. Weekend generation volumes were roughly 1.5× weekday volumes, and certain content categories (celebrity likenesses, meme formats) showed sharp burst-and-fade dynamics.
+Activity spiked predictably around product announcements and social media virality cycles, then decayed rapidly. Weekend generation volumes were roughly 1.5x weekday volumes, and certain prompt topics showed sharp burst-and-fade dynamics tied to external events.
 
 | ![Daily generation volume over the crawl period, annotated with external events.](/post-contents/sora-crawl/fig_temporal_volume.svg) | 
 |:--:| 
 | *Daily generation volume over the crawl period, annotated with external events.* |
 
+### 5. Engagement is heavily concentrated
+
+A tiny fraction of generations received the vast majority of likes, remixes, and views. The distribution followed a steep power law, consistent with other social and creative platforms. Most generations received little to no engagement.
+
+| ![Distribution of engagement metrics (likes, views, remixes) across all crawled generations.](/post-contents/sora-crawl/fig_engagement_distribution.svg) | 
+|:--:| 
+| *Distribution of engagement metrics (likes, views, remixes) across all crawled generations.* |
+
+
+## What Comes Next
+
+This crawl establishes a **T0 baseline**: a quantitative picture of how AI video generation is being used right now on a major platform. But usage data alone does not tell us about environmental impact.
+
+The next steps in our broader research program are:
+
+1. **Measuring energy consumption** of open-source video generation models under realistic workloads, to build a per-generation energy model.
+2. **Combining usage data with energy metrics** to estimate the current environmental footprint of AI video generation.
+3. **Building prospective scenarios** that project how usage patterns and energy costs might evolve as models improve, costs drop, and adoption grows.
+
+Together, these components will allow us to move from observing *what is happening* to modeling *what it means* for energy consumption and sustainability.
 
 ## Practical Takeaways
 
@@ -93,20 +102,20 @@ Activity spiked predictably around product announcements and social media virali
 
 Researchers and journalists should be cautious about drawing conclusions from what platforms surface. The explore page is a curated view, not a census.
 
-#### Prompt engineering matters more than prompt length
+#### Baseline measurement is a prerequisite for impact claims
 
-A few well-chosen style tokens outperform long, rambling descriptions. If you want better generations, be specific about *how* something should look, not just *what* it depicts.
+Any serious assessment of the environmental cost of AI video generation must start with empirical usage data. Speculation about energy consumption without grounding in actual usage patterns is premature.
 
-#### Most generative video use is casual
+#### The scale of casual generation matters
 
-The dominant use case is not filmmaking or professional content creation — it's casual experimentation. Platform design and moderation strategies should account for this reality.
+Even if each individual generation is cheap, the sheer volume of casual, default-parameter usage adds up. Impact modeling must account for the long tail of low-visibility generations, not just the viral highlights.
 
 ---
 
 ## Takeaway
 
-Sora's explore feed offers an unprecedented look at how a frontier video model is actually used. What we found is that most of it is low-effort, repetitive, and clustered around a handful of content types.
+Sora's explore feed offers an unprecedented look at how a frontier video model is actually used. What we found is that most usage is characterized by short prompts, default parameters, and low engagement, with a curated surface layer that paints a very different picture.
 
-This isn't necessarily a problem — casual use is a valid use. But it does mean that **the curated showcases and viral highlights paint a dramatically different picture from the typical generation**.
+This baseline snapshot is a necessary first step. Before we can meaningfully assess or project the environmental costs of AI video generation, we need to know what the current landscape actually looks like.
 
-If we want to understand the real impact of generative video, we need to look past the highlights reel.
+Now we do.
