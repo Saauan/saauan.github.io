@@ -1,122 +1,118 @@
 ---
 layout: post
-title: "Scrolling Through Slop: Quantifying AI Video Generation on Sora"
+title: "Scrolling Through Slop: Quantifying AI video generation on Sora"
 date: 2026-03-02
-categories: "Fun"
+categories: "Research"
 permalink: "/post/sora-crawl/"
-excerpt: "As part of a broader study on the environmental impacts of AI video generation, we crawled Sora's public feed to establish a baseline picture of current usage: how much is generated, how often, and with what characteristics."
-description: "Large-scale crawl of Sora's public explore feed to establish a T0 baseline of AI video generation usage, as groundwork for prospective environmental impact modeling."
-tags: Sora AI video-generation crawl environmental-impact sustainability prospective-analysis
-hidden: true
+excerpt: "AI video generation is booming, but how much is actually happening? We scraped Sora's public feed for 13 days and collected nearly a million videos. Here is what we found."
+description: "An empirical study of public AI video generation on Sora, measuring daily volume, usage patterns, user behaviour, and content characteristics through large-scale scraping."
+tags: AI video Sora scraping environmental-impact generative-AI
 ---
 
-> This post is a shorter and simpler version of the paper and poster "Scrolling Through Slop: A Large-Scale Analysis of AI Video Generation in the Wild" presented at CHI 2026.
-> You can find the paper and its replication package on my [publications page](/publications) and the poster on my [talks page](/talks)
+> This post is a shorter and simpler version of the poster "Scrolling Through Slop: Quantifying AI video generation on Sora with scraping" presented at Green Days 2026.
+> You can find the poster on my [talks page](/talks).
 
+AI video generation has become remarkably accessible. Tools like [Sora](https://sora.chatgpt.com/), Runway, or Gemini let anyone produce short clips from a text prompt in seconds. This democratisation is happening fast, and it is accompanied by a wave of enthusiasm about creative potential and productivity gains.
 
-When OpenAI launched Sora's public explore feed, it opened a window into how people actually use text-to-video generation. Not cherry-picked demos. Not curated showcases. Just thousands of generations, scrollable by anyone.
+But every one of those generations runs on a GPU cluster somewhere.
 
-We looked through that window, systematically.
+The environmental cost of that infrastructure is real, and largely invisible. Before we can estimate it, we need to answer a more basic question:
 
-We crawled Sora's public explore page over several weeks, collected metadata on thousands of generated videos, and asked a straightforward set of questions:
+**How much AI video generation is actually happening?**
 
-**How much video is being generated? What do the prompts and generation parameters look like? And what usage patterns emerge when a frontier video model meets the general public?**
+## Why We Need a Baseline
 
-This work is the first step in a larger research effort. Our broader goal is to anticipate the potential environmental impacts of AI video generation. The data collected here serves as a **baseline snapshot (T0)** of current usage, which will feed into prospective and baseline scenarios for future impact modeling. In a companion effort, we also plan to gather energy consumption metrics from open-source video generation models, so that we can model the full life cycle impacts of AI-generated video.
+Our broader research goal is to anticipate the environmental impacts of AI video generation, modelling energy use, carbon emissions, and resource consumption across the full life cycle of these systems.
+
+But you cannot model what you cannot measure. Official usage data from platforms like Sora is not publicly available, and there is no regulatory requirement to disclose it. This leaves researchers with no reliable starting point.
+
+So we built one ourselves.
+
+## A Lucky Accident: Sora Is Easy to Scrape
+
+Most platforms are opaque by design. Sora happened not to be, at least for its public feed.
+
+Sora's feed of publicly shared videos is **chronologically ordered**, which means it is straightforward to scrape systematically without needing to reverse-engineer any ranking algorithm. We deployed 6 bots to scrape the feed and 10 bots to scrape individual video metadata, running continuously over 18 days in February 2025.
+
+The result: **1.33M videos collected**, with metadata including timestamp, duration, resolution, prompt language, and like counts.
+
+It is worth pausing on how fragile this window is. One API change, one decision to randomise the feed, and this kind of external measurement becomes impossible. The study exists because of an accident of platform design, not because of any commitment to transparency.
+
+## How Much Is Being Generated?
+
+The headline figure: **~74,000 public videos are generated every day** on sora.chatgpt.com. That translates to roughly **5.81 TiB of video data every month**.
+
+To put that in perspective: it sounds like a lot, until you compare it to TikTok, where an estimated [269 million videos are posted daily](https://arxiv.org/pdf/2504.13279). Sora's public output is about **0.028% of that volume**. AI video generation, for now, is a rounding error in the broader media landscape.
+
+But the trajectory matters more than the current scale. These numbers represent a baseline from which we can build on to build predictions and scenarios modeling the evolution of this technology.
+
+## When Is It Used?
+
+Sora does not seem to be used only for entertainement purposes. The usage patterns looks a lot like that of a **working day**.
+
+| ![Hourly usage of Sora broken down by prompt language (French, German, Italian, Japanese, Korean), showing peaks at 11:00 and 14:00 and a sharp decline at night.](/post-contents/sora-crawl/fig_hourly_usage.png) |
+|:--:|
+| *Number of videos generated per hour of the day, by prompt language. Generations peak during working hours and drop sharply at night.* |
+
+Generations peak around **11:00 and again at 14:00**, then gradually decline through the afternoon and evening. Usage at night is a fraction of the daytime peak. Evening hours (18:00–00:00) see roughly **25% fewer generations** than peak daytime.
+
+This pattern holds consistently across the languages we tracked, French, German, Italian, Japanese, and Korean users all show similar temporal shapes, which suggests it reflects global professional rhythms rather than any single region's habits.
+
+## Does Usage Change Over Time?
+
+Remarkably little.
+
+| ![Daily video volume on Sora from February 6 to February 24, 2025, with weekend days highlighted. Bars are near-uniform in length across all dates.](/post-contents/sora-crawl/fig_daily_volume.png) |
+|:--:|
+| *Number of videos published per day over the scraping period. Weekend days are highlighted. Usage is stable across both weekdays and weekends.* |
+
+Daily volume stays **stable across both weekdays and weekends**, with no meaningful dip on Saturdays and Sundays. This further reinforces the idea that Sora is already embedded in ongoing workflows rather than being used purely for leisure.
+
+## Who Is Using It?
+
+Prompts are written overwhelmingly in **English (67.5%)**, but the long tail is genuinely global: Russian (4.6%), Spanish (4.5%), Portuguese (3.6%), French (2.7%), and German (2%) are all meaningfully represented, along with Indonesian, Italian, and Chinese.
+
+| ![Horizontal bar chart of prompt language proportions, with English dominant at ~0.65 and a long tail of other languages.](/post-contents/sora-crawl/fig_language_distribution.png) |
+|:--:|
+| *Proportion of videos by prompt language. English dominates, but Sora is used across a wide range of languages worldwide.* |
+
+Interestingly, **20% of users have generated prompts in more than one language**, suggesting a layer of multilingual or internationally mobile users.
+
+The user distribution is also heavily skewed: **50% of users have generated 2 videos or fewer**, and 90% have generated 7 or fewer. A small number of power users account for a disproportionate share of activity.
+
+## What Gets Made, and Does Anyone Watch It?
+
+The content itself is notably uniform in format:
+
+- **71%** of videos are in portrait orientation
+- **80%** are in 480p resolution, the default quality
+- **75%** last 5 seconds; **20%** last 10 seconds
+
+Moreover, **Only 0.79% of videos receive at least one like within 7 days.** The most-liked video in our dataset has 2,000 likes. For the vast majority of generated content, there is no visible audience at all.
+
+| ![Right-skewed histogram of videos per user, showing the large majority of users have generated very few videos.](/post-contents/sora-crawl/fig_videos_per_user.png) |
+|:--:|
+| *Distribution of total videos generated per user. The distribution is heavily right-skewed: most users generate very few videos.* |
+
+This is the sharpest version of the "slop" question. If 99% of generated videos are never liked, never meaningfully engaged with, and likely never watched by anyone other than their creator, what are they *for*? The honest answer is that we do not know. They may be downloaded and used privately, or shared on social medias. Or they may be used for communication on the internet.
+
+## What We Still Do Not Know
+
+The public feed is only part of the picture. Sora's API allows developers and businesses to generate videos programmatically, without any public visibility. This is almost certainly a significant source of additional volume, and arguably the more environmentally relevant one, since automated pipelines can generate at far higher rates than individual users.
+
+We also have no visibility into what the videos are actually used for once they leave the platform. Understanding downstream use is essential for building realistic environmental impact models.
 
 ## Why This Matters
 
-Text-to-video generation has progressed rapidly, but most evaluations happen in controlled settings: benchmark prompts, curated galleries, technical reports. These tell us what models *can* do, not what they *are used for*.
+A 5-second, 480p video does not feel like a large environmental action. But at 73,000 per day, the cumulative compute starts to add up, and that is before accounting for API usage, or for the trajectory of growth as the technology matures and adoption accelerates.
 
-Sora's explore feed changed that. For the first time, a frontier video model had a public, browsable stream of real user generations. This gave us the opportunity to study AI video generation *in the wild*, at scale, with real prompts and real outputs.
-
-Understanding these usage patterns is essential groundwork for environmental impact assessment. Before we can model how much energy AI video generation will consume in the future, we need to know how it is being used today: how frequently, with what parameters, and at what scale.
-
-## What We Actually Did
-
-Our pipeline had three stages:
-
-1. **Crawl** the Sora explore feed at regular intervals over several weeks, collecting video metadata, prompts, engagement signals, and generation parameters.
-2. **Characterize** each generation based on available metadata: prompt length, use of style modifiers, resolution, duration, and other generation settings.
-3. **Analyze** distributions, temporal patterns, and correlations between prompt characteristics and generation parameters.
-
-It is important to note what we did *not* do: we did not analyze the visual content of the generated videos themselves. Our analysis is based entirely on metadata and prompt text. As a result, we cannot make claims about the quality, creativity, or effort behind individual generations. What we can characterize is the *scale and shape* of usage.
-
-## What We Found
-
-### 1. Prompt characteristics cluster around short, generic descriptions
-
-The vast majority of prompts were short. The median prompt length was well below 30 words, and use of specific stylistic or cinematic modifiers was rare. Only a small fraction of prompts showed signs of deliberate prompt engineering (style tokens, negative prompts, explicit aspect ratio or motion instructions).
-
-| ![Distribution of prompt lengths and stylistic modifier usage across all crawled generations.](/post-contents/sora-crawl/fig_prompt_characteristics.svg) | 
-|:--:| 
-| *Distribution of prompt lengths and stylistic modifier usage across all crawled generations.* |
-
-### 2. A handful of generation parameter settings dominate
-
-Users overwhelmingly stuck with default or near-default generation parameters. A small number of resolution/duration combinations accounted for the bulk of all generations, suggesting that most users do not explore the parameter space extensively.
-
-| ![Distribution of generation parameter combinations (resolution, duration, style preset) across all crawled generations.](/post-contents/sora-crawl/fig_parameter_distribution.svg) | 
-|:--:| 
-| *Distribution of generation parameter combinations (resolution, duration, style preset) across all crawled generations.* |
-
-### 3. The explore feed is not a representative sample
-
-When we compared the metadata distributions of featured/trending videos against the full crawl, clear differences emerged. Featured videos had significantly longer prompts, more frequent use of style modifiers, and less reliance on default parameters. The platform's curation layer filters aggressively, meaning that **scrolling the explore page gives a skewed impression of typical generation behavior**.
-
-| ![Comparison of prompt characteristics between all generations and featured/trending generations.](/post-contents/sora-crawl/fig_featured_vs_all.svg) | 
-|:--:| 
-| *Comparison of prompt characteristics between all generations and featured/trending generations.* |
-
-### 4. Generation volume follows strong temporal patterns
-
-Activity spiked predictably around product announcements and social media virality cycles, then decayed rapidly. Weekend generation volumes were roughly 1.5x weekday volumes, and certain prompt topics showed sharp burst-and-fade dynamics tied to external events.
-
-| ![Daily generation volume over the crawl period, annotated with external events.](/post-contents/sora-crawl/fig_temporal_volume.svg) | 
-|:--:| 
-| *Daily generation volume over the crawl period, annotated with external events.* |
-
-### 5. Engagement is heavily concentrated
-
-A tiny fraction of generations received the vast majority of likes, remixes, and views. The distribution followed a steep power law, consistent with other social and creative platforms. Most generations received little to no engagement.
-
-| ![Distribution of engagement metrics (likes, views, remixes) across all crawled generations.](/post-contents/sora-crawl/fig_engagement_distribution.svg) | 
-|:--:| 
-| *Distribution of engagement metrics (likes, views, remixes) across all crawled generations.* |
-
-
-## What Comes Next
-
-This crawl establishes a **T0 baseline**: a quantitative picture of how AI video generation is being used right now on a major platform. But usage data alone does not tell us about environmental impact.
-
-The next steps in our broader research program are:
-
-1. **Measuring energy consumption** of open-source video generation models under realistic workloads, to build a per-generation energy model.
-2. **Combining usage data with energy metrics** to estimate the current environmental footprint of AI video generation.
-3. **Building prospective scenarios** that project how usage patterns and energy costs might evolve as models improve, costs drop, and adoption grows.
-
-Together, these components will allow us to move from observing *what is happening* to modeling *what it means* for energy consumption and sustainability.
-
-## Practical Takeaways
-
-#### Public feeds are not representative samples
-
-Researchers and journalists should be cautious about drawing conclusions from what platforms surface. The explore page is a curated view, not a census.
-
-#### Baseline measurement is a prerequisite for impact claims
-
-Any serious assessment of the environmental cost of AI video generation must start with empirical usage data. Speculation about energy consumption without grounding in actual usage patterns is premature.
-
-#### The scale of casual generation matters
-
-Even if each individual generation is cheap, the sheer volume of casual, default-parameter usage adds up. Impact modeling must account for the long tail of low-visibility generations, not just the viral highlights.
+This study is one piece of a larger effort to make the environmental footprint of generative AI legible. The next steps involve modelling the actual energy cost per generation, estimating carbon emissions under different data centre scenarios, and building prospective models of what usage might look like in 2–5 years.
 
 ---
 
 ## Takeaway
 
-Sora's explore feed offers an unprecedented look at how a frontier video model is actually used. What we found is that most usage is characterized by short prompts, default parameters, and low engagement, with a curated surface layer that paints a very different picture.
+Every day, tens of thousands of AI videos are generated on Sora, short, low-resolution, rarely liked, and most probably unseen. Usage follows working hours, spans the globe, and is remarkably stable over time.
 
-This baseline snapshot is a necessary first step. Before we can meaningfully assess or project the environmental costs of AI video generation, we need to know what the current landscape actually looks like.
-
-Now we do.
+These numbers are modest by social media standards, but they represent **the floor, not the ceiling**, of a fast-moving technology. 
+Understanding the scale of AI video generation is only the first step toward understanding its cost.
