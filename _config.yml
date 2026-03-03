@@ -1,6 +1,6 @@
 # Site settings
 title: Tristan Coignion
-email: tristan.coignion@inria.fr
+email: tristan@coignion.fr
 description: Academic webpage of Tristan Coignion
 baseurl: ""
 url: ""
@@ -13,15 +13,15 @@ url: ""
 # Footer info
 affiliation: >
   Tristan Coignion<br/>
-  PhD student in Computer Science<br/>
-  Inria - Univeristy of Lille
+  Post-doc researcher in Computer Science<br/>
+  LaBRI - University of Bordeaux
 
 location: >
-  University of Lille<br/>
-  Villeneuve-d'Ascq, France
+  University of Bordeaux<br/>
+  Talence, France
 
 contact: >
-  <a href="mailto:tristan.coignion@inria.fr" target="_blank"><i class="fa fa-envelope fa-1x"></i> Contact Tristan via email</a> <br/>
+  <a href="mailto:tristan@coignion.fr" target="_blank"><i class="fa fa-envelope fa-1x"></i> Contact Tristan via email</a> <br/>
   <a href="https://github.com/sbryngelson/academic-website-template"><i class="fa fa-github fa-1x"></i> Use this site as a template!</a>
 
 # Pages shown in navbar

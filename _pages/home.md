@@ -7,9 +7,11 @@ permalink: /
 
 ### Welcome!
 
-I am a researcher interested in the environmental footprint of Artificial Intelligence, and more particularly, the impact of Large Language Models (LLMs).
+I am a researcher interested in the environmental footprint of Generative Artificial Intelligence. As of today, I work as a post-doc researcher in the [NES team](https://nes.labri.fr) at LaBRI.
 
-Nowadays, I am focused on LLMs for code, and the energy consumption of their usage and of the code they generate.
+My research sits at the intersection of software engineering and environmental sustainability, with a focus on understanding and reducing the ecological footprint of modern AI systems.
+
+My current work is about the environmental footprint of generative AI for video, exploring how to estimate and model the environmental impacts of AI video generation systems, accounting for the complexity of media-specific workloads and usage patterns.
 
 <!-- <div class="container">
 <div class="row">
