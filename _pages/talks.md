@@ -31,6 +31,8 @@ permalink: /talks/
 
 ## Posters
 
+- Scrolling through *Slop*: Quantifying AI video generation on Sora ~ Presented at [Green Days 2026](https://greendays.sciencesconf.org) - [[Poster]](../papers/posters/sora-crawl.pdf)
+
 - Faster Is Not Always Greener: The Costs of LLM-Based Code Optimization ~ Presented at [ASE 2025](https://conf.researchr.org/home/ase-2025) - [[Poster]](../papers/posters/faster-is-not-always-greener.pdf)
 
 - Green My LLM: Studying the key factors affecting the energy consumption of code assistants ~ [Green Days 2025](https://greendays.sciencesconf.org) - [[Poster]](../papers/green_my_llm_poster.pdf)
