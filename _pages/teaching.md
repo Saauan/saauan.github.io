@@ -7,6 +7,9 @@ permalink: /teaching/
 
 ## Teaching
 
+### At Polytech
+- Introduction to Object Oriented Programming - 2026
+
 ### At the University of Lille
 - Introduction to web development (HTML5, CSS, JS) - 2023-2024
 

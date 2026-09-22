@@ -7,11 +7,15 @@ permalink: /
 
 ### Welcome!
 
-I am a researcher interested in the environmental footprint of Generative Artificial Intelligence. As of today, I work as a post-doc researcher in the [NES team](https://nes.labri.fr) at LaBRI.
+I am an associate professor at the University of Lille in the [SPIRALS team](https://www.inria.fr/fr/spirals). I study the environmental and societal footprint of Generative Artificial Intelligence.
 
-My research sits at the intersection of software engineering and environmental sustainability, with a focus on understanding and reducing the ecological footprint of modern AI systems.
+After studying the energy consumption of LLMs in my PhD thesis in 2025, I worked as post-doc in the [NES team](https://nes.labri.fr) at LaBRI in Bordeaux where I studied the environmental footprint of generative AI for video, exploring how to estimate and model the environmental impacts of AI video generation systems and accounting for the complexity of media-specific workloads and usage patterns.
 
-My current work is about the environmental footprint of generative AI for video, exploring how to estimate and model the environmental impacts of AI video generation systems, accounting for the complexity of media-specific workloads and usage patterns.
+### My research topics
+
+Broadly speaking, my research sits at the intersection of software engineering and environmental sustainability, with a focus on understanding and reducing the ecological footprint of modern AI systems, and using those same systems to reduce the footprint of software engineering.
+
+My current work is about the environmental footprint of generative AI for video, as well as studying the external manipulation of chatbots on senstitive harmful topics and their suceptibility to spread misinformation to the users.
 
 <!-- <div class="container">
 <div class="row">
