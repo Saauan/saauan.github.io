@@ -1,0 +1,1032 @@
+/* Deck-local styles for "L'empreinte environnementale de l'IA générative" (2026-10-IA4Dev).
+   Shared slide-grammar components (.stat, .boxed, .quote, .source, .section-break,
+   .statement) live in the coignion theme. This file only holds deck-specific
+   layouts; first one: the closing .rubric checklist. */
+
+/* ---------- full-bleed backgrounds (title slide + section breaks) ----------
+   The deck keeps reveal's default 960x700 design space, so at window aspect
+   ratios other than ~1.37 the slide box is letterboxed inside the window;
+   by default the generated .slide-background only matches the slide box and
+   the background shows bands around it. Pin those slides' backgrounds to the
+   viewport instead: the title slide (dark #191c1f base + cover image) and the
+   four .section-break slides (their data-background-color reuses the theme's
+   own color-mix expression, so the hue stays in sync with .section-break;
+   reveal copies the section's classes onto the .slide-background element, so
+   var(--accent) resolves there too, tone-green included).
+   :not(.overview) keeps the overview grid layout intact; position:fixed
+   resolves against the viewport in embedded contexts too (the .backgrounds
+   container carries a perspective, which would otherwise become the
+   containing block). */
+.reveal:not(.overview) > .backgrounds .slide-background.title-slide,
+.reveal:not(.overview) > .backgrounds .slide-background.section-break {
+  position: fixed;
+  left: 0 !important;
+  top: 0 !important;
+  width: 100% !important;
+  height: 100% !important;
+}
+
+/* ---------- navigation controls ---------- */
+/* At default size and bottom-center position the edge-layout down chevron
+   strikes through the two-line .source footer on content slides. Shrink the
+   arrows and park the down chevron in the bottom-right corner strip, right of
+   the source block (max-width 90%) and left/above nothing else (slide number
+   sits below it). */
+.reveal .controls { font-size: 7px; }
+.reveal .controls[data-controls-layout=edges] .navigate-down {
+  left: auto;
+  right: 1.2em;
+  bottom: 4em;
+  margin-left: 0;
+}
+
+/* ---------- section 3 · orders of magnitude (slides 13-21) ---------- */
+
+/* 14: boxed comparison, 2023 narrative vs 2025 measurements */
+.vs-stack {
+  width: 88%;
+  margin: .2em auto 0;
+}
+.vs-row {
+  display: grid;
+  grid-template-columns: 7.5em 1fr;
+  align-items: center;
+  gap: .8em;
+  margin-top: .6em;
+  padding: .5em .9em;
+  text-align: left;
+}
+.vs-row:first-child { margin-top: 0; }
+.vs-row p {
+  font-size: .62em;
+  margin: 0;
+}
+.vs-tag {
+  justify-self: end;
+  color: var(--accent);
+  font-size: .58em;
+  font-weight: 700;
+  white-space: nowrap;
+}
+.vs-num {
+  color: var(--accent);
+  font-weight: 700;
+}
+
+/* 15/16/18: label+track bars (theme .bar-row pattern, shared left edge) */
+.split-bars {
+  width: 88%;
+  margin: .8em auto 0;
+}
+.split-bars .bar-row > label {
+  font-size: .62em;
+}
+.split-bars .bar-row .bar {
+  min-width: .5em;
+}
+.split-bars .bar-row .bar-value {
+  font-size: .7em;
+}
+/* Global fix: the theme's .bar-row .bar (0,2,0) beats a bare .bar-muted (0,1,0),
+   so muted bars silently rendered amber; bump specificity so this rule wins. */
+.bar-row .bar-muted, .bar-muted { background: #b9b9b9; opacity: 1; }
+
+/* 19: agent loop diagram */
+.loop-svg {
+  display: block;
+  width: 72%;
+  max-width: 560px;
+  margin: .6em auto 0;
+}
+.loop-svg .loop-node {
+  fill: #fff;
+  stroke: #555;
+  stroke-width: 2;
+}
+.loop-svg .loop-lbl {
+  fill: #333;
+  font-size: 17px;
+  text-anchor: middle;
+  font-weight: 700;
+}
+.loop-svg .loop-link, .loop-svg .loop-back {
+  stroke: #555;
+  stroke-width: 2;
+  fill: none;
+}
+.loop-svg .loop-back { stroke-dasharray: 6 5; }
+.loop-svg .loop-sub {
+  fill: var(--muted);
+  font-size: 14px;
+  font-style: italic;
+  text-anchor: middle;
+}
+
+/* 20: multi-agent fan-out diagram */
+.fanout-split {
+  align-items: center;
+  width: 90%;
+  margin: .4em auto 0;
+}
+.fanout-svg {
+  width: 100%;
+  max-width: 460px;
+}
+.fanout-svg .fan-node {
+  fill: #fff;
+  stroke: #555;
+  stroke-width: 2;
+}
+.fanout-svg .fan-orch { stroke: var(--accent); }
+.fanout-svg .fan-lbl {
+  fill: #333;
+  font-size: 15px;
+  font-weight: 700;
+  text-anchor: middle;
+}
+.fanout-svg .fan-orch + .fan-lbl { fill: var(--accent); }
+.fanout-svg .fan-sub {
+  fill: var(--muted);
+  font-size: 12.5px;
+  font-style: italic;
+  text-anchor: middle;
+}
+.fanout-svg .fan-link {
+  stroke: #555;
+  stroke-width: 2;
+}
+
+/* 21: SLM vs LLM comparison table (block table, each row its own 3-col grid) */
+.slm-table {
+  width: 94%;
+  margin: .1em auto 0;
+  text-align: left;
+}
+.slm-head, .slm-row {
+  display: grid;
+  grid-template-columns: 7.5em 1fr 1fr;
+  gap: 0 .8em;
+}
+.slm-head > span {
+  font-size: .8em;
+  font-weight: 700;
+  padding-bottom: .2em;
+  border-bottom: 2px solid var(--accent);
+}
+.slm-colsub {
+  display: block;
+  color: var(--muted);
+  font-size: .6em;
+  font-weight: 400;
+}
+.slm-row > span {
+  font-size: .62em;
+  padding: .18em 0;
+  border-bottom: 1px solid #d9d9d9;
+}
+.slm-crit {
+  font-weight: 700;
+}
+.slm-key {
+  color: var(--accent);
+  font-weight: 700;
+}
+
+/* 14/16/17/20/21: shared centered muted anchor line */
+.anchor-note {
+  margin-top: .8em;
+  text-align: center;
+  color: var(--muted);
+  font-size: .65em;
+}
+
+/* ---------- section 4 · rebound ledger (slides 23-24, auto-animate flip) ----------
+   Two-column energy ledger: task level (23) morphs to system level (24).
+   Rows and column heads share data-ids across the two slides; keep the matched
+   rows flat inside their (unmatched) column wrappers so transforms don't
+   compound. Label+track grid so bars share a left edge. */
+.ledger {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5em;
+  width: 86%;
+  margin: .3em auto 0;
+  align-items: start;
+}
+.ledger-head {
+  text-align: center;
+  font-weight: 700;
+  font-size: .75em;
+  padding-bottom: .2em;
+  border-bottom: 2px solid #b9b9b9;
+  margin-bottom: .3em;
+}
+.ledger-head-agent {
+  color: var(--accent);
+  border-bottom-color: var(--accent);
+}
+.ledger-row {
+  display: grid;
+  grid-template-columns: var(--bar-label-w, 5.5em) 1fr;
+  align-items: center;
+  gap: .6em;
+  margin-top: .25em;
+}
+.ledger-row > label {
+  text-align: right;
+  font-size: .62em;
+  line-height: 1.2;
+}
+.ledger-row .bar {
+  min-width: .5em;
+}
+/* theme scopes bar styles under .bar-row .bar (0,2,0), which beats the deck's
+   plain .bar-muted: re-assert the gray at equal specificity, later file wins */
+.ledger-row .bar-muted {
+  background: #b9b9b9;
+  opacity: 1;
+}
+.ledger-row .bar-value {
+  font-size: .7em;
+}
+.ledger-growth > label {
+  font-weight: 700;
+}
+
+/* 23: two-figure stat (page + image) under the ledger: keep it secondary,
+   bars slightly slimmer so ledger + stat clear the .source footer */
+.ledger {
+  --bar-h: .95em;
+}
+.ledger-stat .stat-number {
+  font-size: 1.4em;
+}
+.ledger-stat .stat-caption {
+  font-size: .56em;
+}
+
+/* 25: Jevons quote: cap the theme's 1.8em quote text so 30 words fit at 720p,
+   and shrink the two-range stat so it clears the .source footer */
+.jevons h2 {
+  margin-bottom: .15em;
+}
+.jevons-quote .quote-text {
+  font-size: 1.15em;
+  line-height: 1.2;
+}
+.jevons-quote + .anchor-note {
+  margin-top: .3em;
+  font-size: .58em;
+}
+.jevons-stat {
+  margin-top: .2em;
+}
+.jevons-stat .stat-number {
+  font-size: 1.5em;
+}
+.jevons-stat .stat-caption {
+  font-size: .58em;
+}
+.jevons .source {
+  font-size: .46em;
+  max-width: 96%;
+}
+
+/* ---------- section 5 · measuring your own footprint (slides 27-32) ----------
+   Palette shifts to accent B (green): each section carries .tone-green, which
+   re-points --accent at the theme's --ok green (theme: .tone-green{--accent:var(--ok)});
+   .section-break, .stat, .boxed and code .hlv all follow automatically.
+   Section 6 note: keep .tone-green on the rubric (33, action part), drop it on
+   the closing statement (34, neutral palette returns per spec) and on 35. */
+
+/* single-column variant of the theme's dark code panel (theme styles live under
+   .code-panels pre, so reuse the wrapper with a one-column grid) */
+.code-panels.solo {
+  grid-template-columns: 1fr;
+  width: 74%;
+  margin: .5em auto 0;
+}
+/* solo panels carry the whole slide: ~10% larger type than the theme .28em */
+.code-panels.solo pre {
+  font-size: .31em;
+}
+/* highlighted key/value inside a code panel (green, follows the tone) */
+.code-panels pre .hlv {
+  color: var(--accent);
+  font-weight: 700;
+}
+/* small bold label above a code panel or stat group */
+.nw-panel-title {
+  color: var(--muted);
+  font-size: .6em;
+  font-weight: 700;
+  margin-bottom: .3em;
+}
+
+/* 28: highlighted output strip under the EcoLogits snippet */
+.code-output {
+  width: 74%;
+  margin: .7em auto 0;
+  border: 2px solid var(--accent);
+  background: var(--accent-soft);
+  border-radius: 10px;
+  padding: .4em 1em;
+  text-align: center;
+  font-size: .78em;
+}
+.code-output .co-num {
+  color: var(--accent);
+  font-weight: 700;
+}
+
+/* 29: placeholder standing in for a real CodeCarbon run output */
+.code-output-ph {
+  width: 74%;
+  height: 2.8em;
+  margin: .7em auto 0;
+}
+
+/* 30: Neuralwatt dashboard mock: API response panel + pricing column.
+   Model table = block container + per-row grid (deck convention). */
+.nw-split {
+  width: 92%;
+  margin: .4em auto 0;
+  align-items: start;
+}
+.nw-models {
+  width: 100%;
+  margin-top: 1em;
+  text-align: left;
+}
+.nw-models-head {
+  font-size: .6em;
+  font-weight: 700;
+  padding-bottom: .25em;
+  border-bottom: 2px solid var(--accent);
+}
+.nw-model-row {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 0 1em;
+  font-size: .62em;
+  padding: .35em 0;
+  border-bottom: 1px solid #d9d9d9;
+  text-align: left;
+}
+.nw-val {
+  color: var(--accent);
+  font-weight: 700;
+  white-space: nowrap;
+}
+.nw-split .stat {
+  margin-top: .6em;
+}
+.nw-split .stat .stat-number {
+  font-size: 2.2em;
+}
+.nw-split .stat .stat-caption {
+  font-size: .58em;
+}
+
+/* 31: screenshot placeholder for the speaker's own usage history */
+.nw-shot-ph {
+  width: 84%;
+  height: 300px;
+  margin: .5em auto 0;
+}
+
+/* 32: one measurement with its error bar (whiskers + central dot) */
+.err-box {
+  width: 72%;
+  margin: .6em auto 0;
+  text-align: center;
+}
+.err-track {
+  position: relative;
+  height: 3.2em;
+  width: 78%;
+  margin: 1.4em auto .2em;
+}
+.err-range {
+  position: absolute;
+  top: 50%;
+  left: 12%;
+  right: 12%;
+  height: 4px;
+  border-radius: 2px;
+  background: var(--accent);
+  opacity: .35;
+  transform: translateY(-50%);
+}
+.err-range::before, .err-range::after {
+  content: "";
+  position: absolute;
+  top: -6px;
+  bottom: -6px;
+  width: 3px;
+  border-radius: 2px;
+  background: var(--accent);
+  opacity: .6;
+}
+.err-range::before { left: 0; }
+.err-range::after { right: 0; }
+.err-dot {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: var(--accent);
+  transform: translate(-50%, -50%);
+}
+.err-val {
+  position: absolute;
+  top: -1.5em;
+  left: 50%;
+  transform: translateX(-50%);
+  color: var(--accent);
+  font-weight: 700;
+  font-size: .9em;
+  white-space: nowrap;
+}
+.err-caption {
+  color: var(--muted);
+  font-size: .58em;
+  margin-top: .6em;
+}
+.err-box p {
+  font-size: .75em;
+  margin-top: .5em;
+}
+
+/* ---------- rubric (closing checklist, slide 33) ----------
+   Block container + per-row grid (deck convention, never grid-of-wrappers);
+   rows mirror the .slm-row table treatment. Green accent via .tone-green on
+   the section element. */
+.rubric {
+  width: 62%;
+  margin: .8em auto 0;
+  text-align: left;
+  border-top: 2px solid var(--accent);
+}
+.rubric .rubric-row {
+  display: grid;
+  grid-template-columns: 1.2em 1fr;
+  align-items: baseline;
+  gap: 0 .6em;
+  padding: .38em .2em;
+  border-bottom: 1px solid #d9d9d9;
+  font-size: .82em;
+}
+.rubric .rubric-check {
+  color: var(--accent);
+  font-weight: 700;
+}
+
+/* 35: thanks slide, quiet and neutral: contact line + four link cards */
+.thanks-contact {
+  margin-top: 1.2em;
+  font-size: .85em;
+}
+.thanks-contact a {
+  color: inherit;
+}
+.thanks-links {
+  display: flex;
+  justify-content: center;
+  gap: .8em;
+  margin-top: 1.8em;
+}
+.thanks-link {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: .15em;
+  border: 2px solid #b9b9b9;
+  border-radius: 10px;
+  padding: .45em .8em;
+  color: #333;
+  font-size: .8em;
+  font-weight: 700;
+  text-decoration: none;
+}
+.thanks-link span {
+  color: var(--muted);
+  font-size: .68em;
+  font-weight: 400;
+}
+.thanks-link:hover {
+  border-color: var(--accent);
+}
+
+/* ---------- paper figures (slides 8, 16, 17, 18, 23) ----------
+   Raster crops from the papers on the light #f0f1eb content background:
+   white matte + hairline border is enough (no dark slide carries one).
+   Neutralize the theme's img defaults (object-fit:cover, flex:auto) so the
+   aspect ratio is preserved, and set per-figure widths to keep ≥5% vertical
+   slack above the .source line (verified in headless Chrome, 720p + 1080p). */
+.paper-fig {
+  display: block;
+  flex: none;
+  object-fit: contain;
+  background: #fff;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 6px;
+  box-sizing: border-box;
+  margin: .25em auto 0;
+  box-shadow: 0 4px 12px #0000001f;
+}
+.fig-caption {
+  margin: .1em auto 0;
+  text-align: center;
+  color: var(--muted);
+  font-size: .45em;
+  font-style: italic;
+}
+/* per-figure widths (kept clear of the .source line, verified at 720p+1080p) */
+.fig-falk { width: 650px; }
+.fig-caravaca { width: 580px; }
+.fig-luccioni { width: 450px; }
+.fig-tomlinson { width: 510px; }
+.fig-delavande { width: 370px; }
+
+/* long-title figure slides (18, 23): slightly smaller h2 buys the vertical
+   slack the raster figure needs; content below is unchanged */
+.fig-h2-sm h2 {
+  font-size: 1.1em;
+  margin-bottom: .4em;
+}
+
+/* slide 8: stat (left) + lifecycle figure (right) */
+.falk-split {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 1.2em;
+  width: 96%;
+  margin: .1em auto 0;
+  align-items: center;
+}
+.falk-split .stat.compact .stat-caption { font-size: .62em; }
+
+/* slide 9 (inserted 2026-10-21 after the Falk A100 slide; later slides renumbered
+   +1): large cobalt-mine photo, short caption. Neutralize the theme img defaults
+   (object-fit:cover, flex:auto) and keep the photo dominant without colliding
+   with the three-line .source (padding-bottom lifts the centered content). */
+.cobalt-slide {
+  padding-bottom: 70px;
+}
+.reveal .cobalt-photo {
+  margin: .15em auto 0;
+}
+.reveal .cobalt-photo img {
+  display: block;
+  flex: none;
+  object-fit: contain;
+  height: 400px;
+  width: auto;
+  max-width: 100%;
+  margin: 0 auto;
+  background: #fff;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 6px;
+  box-sizing: border-box;
+  box-shadow: 0 4px 12px #0000001f;
+}
+
+/* slide 16: figure (left) + anchor takeaway (right) */
+.caravaca-split {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 1.4em;
+  width: 94%;
+  margin: .2em auto 0;
+  align-items: center;
+}
+.caravaca-split .anchor-note { margin-top: 0; }
+
+/* slide 17: stat (left) + energy table (right), anchor line full-width below */
+.modality-split {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 1.2em;
+  width: 94%;
+  margin: .2em auto 0;
+  align-items: center;
+}
+/* the two-value number wraps to two stacked lines in the narrow column;
+   scoped at .stat.compact level: the theme's (0,3,0) .stat.compact .stat-number
+   beats a bare (0,2,0) descendant rule */
+.modality-split .stat.compact .stat-number { font-size: 1.6em; }
+.modality-split .stat.compact .stat-caption { font-size: .62em; }
+
+/* slide 23: figure (left) + two-figure stat (right) */
+.tomlinson-split {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 1.4em;
+  width: 94%;
+  margin: .2em auto 0;
+  align-items: center;
+}
+
+/* slide 18: two-column video figure (stat + log-scale tag | square figure) */
+.video-fig {
+  width: 92%;
+  margin: .3em auto 0;
+  align-items: center;
+}
+.video-fig .fig-caption { margin-top: .5em; }
+
+/* slide 24: schematic tag under the no-longer-morphing ledger */
+.ledger-schematic {
+  margin: .7em auto 0;
+  text-align: center;
+  color: var(--muted);
+  font-size: .5em;
+  font-style: italic;
+}
+
+/* ---------- title slide (slide 1): mute the supporting lines ---------- */
+.title-slide .subtitle {
+  color: var(--muted);
+  font-size: .8em;
+}
+.title-slide .meta {
+  margin-top: 1.5em;
+  color: var(--muted);
+  font-size: .7em;
+}
+/* dark photo-background variant (datacenter-night.jpg): let the reveal
+   background layer show and switch the title block to light text */
+.reveal .slides section.title-slide[data-background-color="#191c1f"] {
+  background-color: transparent;
+}
+.reveal .slides section.title-slide[data-background-color="#191c1f"] h1 {
+  color: #fff;
+  text-shadow: 0 1px 8px rgba(0, 0, 0, .55);
+}
+.reveal .slides section.title-slide[data-background-color="#191c1f"] .subtitle,
+.reveal .slides section.title-slide[data-background-color="#191c1f"] .meta {
+  color: #d8d5d0;
+  text-shadow: 0 1px 6px rgba(0, 0, 0, .5);
+}
+.photo-credit {
+  position: absolute;
+  bottom: .5em;
+  left: 1em;
+  font-size: .4em;
+  color: rgba(255, 255, 255, .55);
+  z-index: 10;
+}
+
+/* ---------- lifecycle diagram (slide 5): four equal stages, resources tagged ---------- */
+.lifecycle {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr auto 1fr auto 1fr;
+  align-items: stretch;
+  gap: .35em;
+  width: 97%;
+  margin: 1em auto 0;
+}
+.lifecycle .stage {
+  border: 2px solid #555;
+  border-radius: 10px;
+  padding: .55em .35em;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.lifecycle .stage-name {
+  font-weight: 700;
+  white-space: nowrap;
+  font-size: .8em;
+}
+.lifecycle .stage-res {
+  margin-top: .35em;
+  color: var(--accent);
+  font-size: .5em;
+  line-height: 1.5;
+}
+.lifecycle .lifecycle-arrow {
+  align-self: center;
+  color: #555;
+  font-size: .8em;
+}
+.lifecycle-note {
+  margin-top: 1.2em;
+  text-align: center;
+  color: var(--muted);
+  font-size: .55em;
+  font-style: italic;
+}
+
+/* ---------- trend chart (slide 6): demand vs per-token efficiency ---------- */
+.trend-split {
+  align-items: center;
+  width: 92%;
+  margin: .4em auto 0;
+}
+/* keep "165 → 420 TWh" on one line (was wrapping after the arrow) */
+.trend-split .stat-number {
+  font-size: 2em;
+  white-space: nowrap;
+}
+.trend-chart {
+  width: 100%;
+  max-width: 460px;
+}
+.trend-chart .axis {
+  stroke: #c9c9c9;
+  stroke-width: 1;
+}
+.trend-chart .line-demand {
+  stroke: var(--accent);
+  stroke-width: 3.5;
+  fill: none;
+  stroke-linecap: round;
+}
+.trend-chart .line-efficiency {
+  stroke: #9a9a9a;
+  stroke-width: 2.5;
+  fill: none;
+  stroke-linecap: round;
+}
+.trend-chart .lbl-demand {
+  fill: var(--accent);
+  font-size: 15px;
+  font-weight: 700;
+}
+.trend-chart .lbl-efficiency {
+  fill: #9a9a9a;
+  font-size: 14px;
+}
+.trend-chart .lbl-axis {
+  fill: #9a9a9a;
+  font-size: 13px;
+}
+
+/* ---------- water slide (slide 7): three-box row + anchor line ---------- */
+.water-boxes {
+  gap: 1.2em;
+  width: 94%;
+  margin: .4em auto 0;
+}
+.water-boxes .flow-node {
+  font-size: .8em;
+  padding: .5em .6em;
+}
+/* breathing room between the three-box row and the water-footprint stat;
+   caption capped to one line so the block clears the .source footer */
+.water-boxes + .stat {
+  margin-top: .5em;
+}
+.water-boxes + .stat .stat-number {
+  font-size: 1.9em;
+}
+.water-boxes + .stat .stat-caption {
+  font-size: .72em;
+}
+.water-anchor {
+  margin-top: .3em;
+  text-align: center;
+  color: var(--muted);
+  font-size: .65em;
+}
+/* hydric-stress warning strip (Rosa et al. 2026): lightblue tint so it reads as
+   part of the water story, not the orange .boxed accent; must clear the .source */
+.water-warn {
+  width: 94%;
+  margin: .35em auto 0;
+  padding: .3em .8em;
+  border-radius: 12px;
+  background: color-mix(in srgb, #2fc5ca 12%, white);
+  border-left: 4px solid #2fc5ca;
+  text-align: center;
+  font-size: .72em;
+}
+.water-warn [class*="iconoir"] {
+  margin-right: .35em;
+  color: #17858a;
+}
+
+/* slide 8: the title clause demoted from the h2 reads as a muted lead-in */
+.imp-note {
+  margin: .1em auto 0;
+  text-align: center;
+  color: var(--muted);
+  font-size: .55em;
+  font-style: italic;
+}
+
+/* ---------- slide 11 · Shift Project fig. 2 redraw (global GHG scenarios) ---------- */
+.shift-split {
+  display: grid;
+  grid-template-columns: 1.6fr 1fr;
+  gap: 1.6em;
+  align-items: center;
+  margin-top: .2em;
+}
+.shift-chart {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+.shift-chart .grid-line {
+  stroke: #e6e6e2;
+  stroke-width: 1;
+}
+.shift-chart .axis-txt {
+  fill: var(--muted);
+  font-size: 13px;
+}
+.shift-chart .end-txt {
+  font-size: 15px;
+  font-weight: 700;
+}
+.shift-legend {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: .1em;
+  margin-top: .4em;
+  font-size: .5em;
+  color: var(--muted);
+}
+.shift-legend .sw {
+  display: inline-block;
+  width: 1.9em;
+  border-top: 3px solid;
+  vertical-align: middle;
+  margin-right: .45em;
+}
+.shift-legend .sw.dashed {
+  border-top-style: dashed;
+}
+.shift-side {
+  text-align: center;
+}
+.shift-side .stat.compact .stat-caption {
+  font-size: .72em;
+}
+.shift-side .callout {
+  margin-top: 1em;
+  padding: .5em .8em;
+  font-size: .55em;
+  line-height: 1.35;
+  text-align: left;
+}
+
+/* ---------- indirect-impact chain (slide 10): staged causal chain ----------
+   Hidden fragments keep their box through visibility:hidden, which parks the
+   lone first node at the left of the reserved row; drop them from the flow so
+   each staged state re-centers. */
+.indirect-chain .fragment:not(.visible) {
+  display: none;
+}
+.indirect-chain {
+  margin-top: 1.4em;
+}
+.indirect-chain .flow-node {
+  padding: .6em 1em;
+  font-size: .85em;
+}
+
+/* ---------- variance box (backup slide): claim + staged caveat ---------- */
+.variance-box {
+  width: 80%;
+  margin: .4em auto 0;
+  text-align: center;
+  padding: .45em 1.25em;
+}
+.variance-energy {
+  color: var(--accent);
+  font-size: 1.2em;
+  font-weight: 700;
+}
+.variance-sub {
+  color: var(--muted);
+  font-size: .7em;
+  margin-top: .1em;
+}
+/* ---------- section break: lone number reads too small at theme default ---------- */
+.section-break .section-label {
+  font-size: 1.3em;
+}
+
+/* ---------- statement diagrams (slides 2-3): flow rows under a statement ---------- */
+.statement .flow {
+  margin-top: 1.6em;
+}
+.statement .flow-node {
+  padding: .5em 1em;
+  font-size: .75em;
+}
+.flow-node .node-sub {
+  color: var(--muted);
+  font-size: .85em;
+  display: block;
+  margin-top: .2em;
+}
+
+/* ---------- 24: rebound typology (lead + 3 muted chips), bridge from Cook's
+   counter-argument to the ledger / manufactured-demand slides.
+   Hidden fragments reserve their row via visibility:hidden; drop it so the
+   hidden state keeps the current layout. ---------- */
+.rebound-typo.fragment:not(.visible) {
+  display: none;
+}
+.rebound-typo {
+  max-width: 96%;
+  margin: .2em auto 0;
+  justify-content: center;
+  align-items: center;
+  row-gap: .06em;
+  column-gap: .55em;
+  flex-wrap: wrap;
+  display: flex;
+}
+.rebound-typo .rebound-lead {
+  color: var(--muted);
+  font-size: .55em;
+  font-style: italic;
+}
+.rebound-typo .rebound-chip {
+  color: #555;
+  border: 1px solid #b9b9b9;
+  border-radius: 8px;
+  padding: .05em .45em;
+  font-size: .42em;
+  white-space: nowrap;
+}
+
+/* ---------- slides reused from 2026-10-Graduate-Program-AI (staged by coordinator; agents don't edit style.css) ---------- */
+/* modality ladder (GP 21): theme .bar-row + deck data */
+.ladder { width: 80%; margin: .7em auto 0; }
+.ladder .bar-row { --bar-label-w: 4.5em; --bar-h: 2em; margin-top: .55em; }
+.ladder .bar-row label { font-size: .6em; }
+.ladder .bar { font-size: .55em; }
+.ladder .text .bar { width: 1%; min-width: 0; }
+.ladder .image .bar { width: 80%; }
+.ladder .video .bar { width: 174%; } /* intentional: the video bar runs off the right slide edge to convey the order-of-magnitude gap; do not 'fix' it back into the track */
+.ladder-foot { text-align: center; font-size: .52em; color: #666; margin-top: .6em; }
+
+/* manufactured-demand bolt row (GP 10) */
+.bolt-row { display: flex; justify-content: center; gap: 1.6em; margin-top: .4em; }
+.bolt-row .tool { position: relative; text-align: center; font-size: .5em; color: #555; }
+.bolt-row .tool i { font-size: 1.9em; display: block; margin-bottom: .2em; }
+.bolt-row .tool .ai-tag {
+  position: absolute; top: -0.7em; right: -1em;
+  background: var(--accent); color: #fff;
+  border-radius: 1em; font-size: .7em; padding: .1em .5em;
+  font-weight: bold;
+}
+.bolt-row .tool.mega .ai-tag { font-size: 1em; padding: .15em .55em; }
+.bolt-note { text-align: center; font-size: .5em; color: #777; margin-top: .4em; }
+
+/* Alpine rebuttal (GP 19): dimmed win-cards left, figure right */
+.win-cards { display: grid; grid-template-columns: repeat(4, 1fr); gap: .5em; width: 88%; margin: .25em auto 0; }
+.win-cards .win-card {
+  display: flex; flex-direction: column; align-items: center; gap: .05em;
+  border: 2px solid var(--muted, #777);
+  border-radius: 12px;
+  padding: .12em .7em;
+  font-size: .58em; line-height: 1.2; text-align: center;
+}
+.win-cards .win-card i { font-size: 1em; color: var(--muted, #777); }
+.win-cards .win-card.dimmed { opacity: .22; filter: grayscale(1); }
+.rebuttal-cols { display: flex; align-items: flex-start; justify-content: center; gap: 1em; width: 92%; margin: .15em auto 0; }
+.win-cards.cards2x2 { grid-template-columns: repeat(2, 1fr); gap: .45em; width: 33%; margin: 0; }
+.win-cards.cards2x2 .win-card { font-size: .52em; padding: .15em .5em; }
+.rebuttal-quote { text-align: center; font-size: .62em; font-style: italic; margin: .3em 0 0; }
+.alpine-fig { margin: .1em auto 0; width: fit-content; }
+.reveal figure.alpine-fig img { max-height: 280px; width: auto; max-width: 92%; margin: 0 auto; }
+.reveal .alpine-fig figcaption { font-size: .37em; line-height: 1.35; margin-top: .3em; }
+
+/* Neuralwatt usage dashboard strip (slide 32) */
+.nw-usage-fig { width: 96%; margin: .4em auto 0; text-align: center; }
+.reveal figure.nw-usage-fig img { width: 100%; height: auto; border-radius: 6px; }
+
+/* Who am I (slide 2) */
+.whoami {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 3em;
+  margin-top: 2.2em;
+}
+.whoami-photo {
+  width: 230px;
+  height: 230px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 4px solid var(--accent);
+  flex-shrink: 0;
+}
+.whoami-text { text-align: left; min-width: 0; }
+.whoami-name { font-size: 1.5em; font-weight: bold; margin: 0 0 .15em; }
+.whoami-role { font-size: .95em; margin: 0 0 .8em; white-space: nowrap; }
+.whoami-research { font-size: .85em; max-width: 19em; margin: 0 0 .8em; }
+.whoami-link { font-size: .85em; margin: 0; }

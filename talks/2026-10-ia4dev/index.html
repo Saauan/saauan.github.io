@@ -1,0 +1,818 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <title>L'empreinte environnementale de l'IA générative · ANF DevLog IA4Dev 2026</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+  <link rel="stylesheet" href="dist/reset.css">
+  <link rel="stylesheet" href="dist/reveal.css">
+  <link rel="stylesheet" href="dist/theme/serif.css" id="theme">
+  <link rel="stylesheet" href="dist/theme/coignion.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/iconoir-icons/iconoir@main/css/iconoir.css"/>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="reveal">
+<div class="slides">
+
+<!-- ═══════════════ §1 · OPENING ═══════════════ -->
+
+<!-- 1 · Title -->
+<section>
+  <section class="title-slide" data-background-color="#191c1f" data-background-image="datacenter-night.jpg" data-background-size="cover" data-background-position="center" data-background-opacity="0.4">
+    <h1>L'empreinte environnementale de l'IA générative et des agents de développement</h1>
+    <p class="subtitle">ANF DevLog IA4Dev · Grenoble · octobre 2026</p>
+    <p class="meta">Tristan Coignion · Inria - Université de Lille</p>
+    <p class="photo-credit">Photo: Arthur40A (CC BY-SA 2.0, flickr)</p>
+  </section>
+
+  <!-- 2 · Who am I -->
+  <section>
+    <h2>Qui suis-je&nbsp;?</h2>
+    <div class="whoami">
+      <img class="whoami-photo" src="tristan-headshot.jpg" alt="Tristan Coignion">
+      <div class="whoami-text">
+        <p class="whoami-name">Tristan Coignion</p>
+        <p class="whoami-role">Maître de conférences<br>Université de Lille</p>
+        <p class="whoami-research">Mes recherches portent sur les impacts environnementaux et sociétaux des IA génératives</p>
+        <p class="whoami-link"><a href="https://tristan.coignion.fr">tristan.coignion.fr</a></p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 3 · Statement: energy redirected, not removed -->
+  <section class="statement">
+    <div class="statement-text" style="font-size:1.2em;">Une semaine de développeur remplacée par un run d'agent de 5&nbsp;minutes&nbsp;:<br>meilleur pour l'environnement ?</div>
+  </section>
+
+  <!-- 4 · Statement: goal + roadmap -->
+  <section class="statement">
+    <div class="statement-text" style="font-size:1.4em;">Objectif&nbsp;:<br>utiliser l'IA générative<br>en connaissance de cause</div>
+    <div class="flow fragment roadmap">
+      <div class="flow-node">Ce que ça coûte</div>
+      <span class="flow-arrow">→</span>
+      <div class="flow-node">Ce à quoi ça se mesure</div>
+      <span class="flow-arrow">→</span>
+      <div class="flow-node">Ce que vous pouvez mesurer</div>
+    </div>
+  </section>
+</section>
+
+<!-- ═══════════════ §2 · THE MATERIAL IMPACTS ═══════════════ -->
+
+<section>
+
+  <!-- 5 · Section break -->
+  <section class="section-break" data-background-color="color-mix(in srgb, var(--accent) 6%, white)">
+    <div class="section-label">2</div>
+    <div class="section-question">Où se situe physiquement l'empreinte d'un modèle&nbsp;?</div>
+  </section>
+
+  <!-- 6 · Lifecycle: four resources across the cycle -->
+  <section>
+    <h2>L'empreinte de l'IA s'étale sur quatre ressources&nbsp;: électricité, eau, matériel, sol</h2>
+    <div class="lifecycle">
+      <div class="stage">
+        <div class="stage-name">Fabrication</div>
+        <span class="stage-res">matériel · eau · sol</span>
+      </div>
+      <span class="lifecycle-arrow">→</span>
+      <div class="stage">
+        <div class="stage-name">Entraînement</div>
+        <span class="stage-res">électricité · eau · matériel</span>
+      </div>
+      <span class="lifecycle-arrow">→</span>
+      <div class="stage">
+        <div class="stage-name">Inférence</div>
+        <span class="stage-res">électricité · eau</span>
+      </div>
+      <span class="lifecycle-arrow">→</span>
+      <div class="stage">
+        <div class="stage-name">Fin de vie</div>
+        <span class="stage-res">sol · matériel</span>
+      </div>
+    </div>
+    <p class="lifecycle-note">La fin de vie est l'étape que la plupart des ACV omettent.</p>
+    <div class="source">Berthelot et al. 2024, <em>Estimating the environmental impact of Generative-AI services using an LCA-based methodology</em><br>Falk et al. 2025, <em>More than Carbon: Cradle-to-Grave environmental impacts of GenAI training on the Nvidia A100 GPU</em></div>
+  </section>
+
+  <!-- 7 · Datacenter electricity: demand outruns efficiency (dense) -->
+  <section>
+    <h2>La consommation électrique des datacenters croît plus vite que les gains d'efficacité</h2>
+    <div class="grid-columns-2 trend-split">
+      <div class="stat compact">
+        <span class="stat-number">165 → 420&nbsp;TWh</span>
+        <span class="stat-caption">datacenters, 2014 → 2024<br>1&nbsp;500&nbsp;TWh projetés en 2030</span>
+      </div>
+      <svg class="trend-chart" viewBox="0 0 380 200" aria-hidden="true">
+        <line class="axis" x1="34" y1="172" x2="360" y2="172"/>
+        <line class="axis" x1="34" y1="16" x2="34" y2="172"/>
+        <polyline class="line-demand" points="34,166 140,148 246,96 352,26"/>
+        <polyline class="line-efficiency" points="34,52 140,84 246,116 352,144"/>
+        <text class="lbl-demand" x="168" y="30">Demande totale</text>
+        <text class="lbl-efficiency" x="150" y="162">Efficacité par jeton</text>
+        <text class="lbl-axis" x="34" y="192">2014</text>
+        <text class="lbl-axis" x="330" y="192">2030</text>
+      </svg>
+    </div>
+    <div class="source">The Shift Project 2025, <em>Intelligence artificielle, données, calculs&nbsp;: quelles infrastructures dans un monde décarboné&nbsp;?</em><br>Luccioni et al. 2024, <em>Power Hungry Processing: Watts Driving the Cost of AI Deployment?</em></div>
+  </section>
+
+  <!-- 8 · Water: three consumption sites -->
+  <section>
+    <h2>L'eau se consume en trois endroits</h2>
+    <div class="grid-columns-3 water-boxes">
+      <div class="flow-node">Refroidissement datacenter</div>
+      <div class="flow-node">Refroidissement des centrales</div>
+      <div class="flow-node">Eau ultra-pure pour puces</div>
+    </div>
+    <div class="stat compact">
+      <span class="stat-number">4,2-6,6&nbsp;milliards de&nbsp;m³</span>
+      <span class="stat-caption">d'eau pour l'IA d'ici 2027, soit 4-6 Danemark, la moitié du Royaume-Uni</span>
+    </div>
+    <p class="water-anchor">Les datacenters évaporent 1-9&nbsp;L par kWh d'énergie serveur</p>
+    <div class="water-warn"><i class="iconoir-droplet"></i>1 datacenter sur 4 est déjà en zone de déficit d'eau au moins un mois par an, en concurrence avec l'eau potable et l'irrigation.</div>
+    <div class="source">Li et al. 2025, <em>Making AI Less 'Thirsty': Uncovering and Addressing the Secret Water Footprint of AI Models</em><br>Elsworth et al. 2025, <em>Measuring the environmental impact of delivering AI at Google Scale</em><br>Rosa et al. 2026, <em>One Quarter of Global Data Centers are Located in Water-Stressed Areas</em>, Environ. Sci. Technol.</div>
+  </section>
+
+  <!-- 9 · Manufacturing dominates toxicity and mineral depletion (dense) -->
+  <section class="fig-h2-sm">
+    <h2>La fabrication : toxicité et épuisement minéral</h2>
+    <div class="falk-split">
+      <div class="stat compact">
+        <span class="stat-number">99&nbsp;%</span>
+        <span class="stat-caption">de l'impact toxicité humaine (cancer) de l'A100 SXM vient de la fabrication</span>
+      </div>
+      <div>
+        <img class="paper-fig fig-falk" src="figures/falk-fig3-gpu-lcia.png" alt="Figure 3 de Falk et al. 2025 : contributions des étapes du cycle de vie par catégorie d'impact, GPU A100 SXM">
+      </div>
+    </div>
+    <p class="fig-caption">Contribution des étapes du cycle de vie par catégorie d’impact, GPU A100 SXM</p>
+    <div class="source">Falk et al. 2025, <em>More than Carbon: Cradle-to-Grave environmental impacts of GenAI training on the Nvidia A100 GPU</em>, fig. 3</div>
+  </section>
+
+  <!-- 10 · Cobalt mining in the DRC: where manufacturing begins (photo) -->
+  <section class="fig-h2-sm cobalt-slide">
+    <h2>La fabrication commence dans des mines</h2>
+    <figure class="cobalt-photo">
+      <img src="figures/cobalt-shabara-afp.jpg" alt="Creuseurs à la mine artisanale de cobalt de Shabara, près de Kolwezi, en République démocratique du Congo">
+    </figure>
+    <p class="fig-caption">Creuseurs de la mine artisanale de cobalt de Shabara, près de Kolwezi (RDC)&nbsp;: 76&nbsp;% du cobalt mondial y est extrait</p>
+    <div class="source">Photo&nbsp;: Junior Kannah / AFP, 12 octobre 2022, mine artisanale de Shabara près de Kolwezi (via La&nbsp;Croix)<br>U.S. Geological Survey, <em>Mineral Commodity Summaries</em>, janvier 2025<br>Amnesty International &amp; Afrewatch 2016, <em>«&nbsp;This Is What We Die For&nbsp;»&nbsp;: Human Rights Abuses in the DRC Power the Global Trade in Cobalt</em></div>
+  </section>
+
+  <!-- 11 · Section takeaway -->
+  <section class="statement">
+    <div class="statement-text" style="font-size:1.4em;">Quatre ressources,<br>un multiplicateur&nbsp;: <span class="hl">l'usage</span></div>
+  </section>
+
+</section>
+
+<!-- ═══════════════ §3 · ORDERS OF MAGNITUDE: COMPARING USAGES ═══════════════ -->
+
+<section>
+
+  <!-- 12 · Section break -->
+  <section class="section-break" data-background-color="color-mix(in srgb, var(--accent) 6%, white)">
+    <div class="section-label">3</div>
+    <div class="section-question">Combien coûte réellement chaque usage&nbsp;?</div>
+  </section>
+
+  <!-- 13 · Google vs LLM query: the contested comparison (drop candidate) -->
+  <section>
+    <h2>Requête Google vs requête LLM&nbsp;: une comparaison populaire, et pourquoi elle est contestée</h2>
+    <div class="vs-stack">
+      <div class="boxed vs-row">
+        <span class="vs-tag">estimations 2009-2023</span>
+        <p><span class="vs-num">0,3&nbsp;Wh</span> par recherche Google (auto-estimation de 2009, jamais re-mesurée) vs <span class="vs-num">2,9&nbsp;Wh</span> par requête ChatGPT&nbsp;: ×10</p>
+      </div>
+      <div class="boxed vs-row">
+        <span class="vs-tag">mesures 2025</span>
+        <p><span class="vs-num">0,24&nbsp;Wh</span> par prompt Gemini (Google, production) · <span class="vs-num">~0,3&nbsp;Wh</span> par requête GPT-4o (Epoch AI)</p>
+      </div>
+    </div>
+    <div class="source">de Vries 2023, <em>The growing energy footprint of artificial intelligence</em><br>Elsworth et al. 2025, <em>Measuring the environmental impact of delivering AI at Google Scale</em></div>
+  </section>
+
+  <!-- 14 · Response length drives the cost -->
+  <section>
+    <h2>La longueur du prompt est secondaire&nbsp;; la longueur de la réponse pilote le coût</h2>
+    <div class="caravaca-split">
+      <img class="paper-fig fig-caravaca" src="figures/caravaca-fig1-output-tokens.png" alt="Figure 1 de Caravaca et al. 2025 : énergie GPU par requête en fonction des jetons de sortie, neuf modèles, lignes colorées par nombre de jetons d'entrée">
+      <p class="anchor-note">L'énergie croît quasi linéairement avec les jetons de sortie, et bien plus qu'avec les jetons d'entrée&nbsp;: contexte long bon marché, générations longues non.</p>
+    </div>
+    <div class="source">Caravaca et al. 2025, <em>From Prompts to Power: Measuring the Energy Footprint of LLM Inference</em><br>Husom et al. 2024, <em>The Price of Prompting: Profiling Energy Use in LLM Inference</em></div>
+  </section>
+
+  <!-- 15 · Modality ladder -->
+  <section>
+    <h2>Une image coûte ≈ 60× une requête texte, une vidéo courte ≈ 30× une image</h2>
+    <p class="tiny-note" style="text-align:center; margin:.1em 0 .5em;">l'effort du prompt est le même pour les trois&nbsp;: ce qu'il génère fixe le prix · longueurs de barres en échelle logarithmique, non à l'échelle</p>
+    <div class="ladder">
+      <div class="bar-row text"><label>texte</label><div class="bar"></div></div>
+      <div class="bar-row image"><label>image</label><div class="bar-row-main"><div class="bar">≈ 60× le texte</div></div></div>
+      <div class="bar-row video"><label>vidéo courte</label><div class="bar">≈ 90&nbsp;Wh, soit ≈ 30× l'image</div></div>
+    </div>
+    <p class="ladder-foot fragment fade-up"><i class="iconoir-spark"></i>la génération de vidéo&nbsp;: coût ≈ quadratique en résolution et en durée</p>
+    <div class="source">Luccioni et al. 2024, <em>Power Hungry Processing: Watts Driving the Cost of AI Deployment?</em><br>Delavande et al. 2025, <em>Video Killed the Energy Budget: Characterizing the Latency and Power Regimes of Open Text-to-Video Models</em></div>
+  </section>
+
+  <!-- 16 · Agent run: cost multiplied by the number of turns -->
+  <section>
+    <h2>Un run d'agent multiplie le coût de la requête par le nombre de tours</h2>
+    <div class="stat compact">
+      <span class="stat-number">13×</span>
+      <span class="stat-caption">l'énergie par requête&nbsp;: requêtes 15× plus longues</span>
+    </div>
+    <svg class="loop-svg" viewBox="0 0 560 168" aria-hidden="true">
+      <defs>
+        <marker id="loop-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+          <path d="M0,0 L10,5 L0,10 z" fill="#555"/>
+        </marker>
+      </defs>
+      <rect class="loop-node" x="70" y="18" width="120" height="50" rx="10"/>
+      <rect class="loop-node" x="220" y="18" width="120" height="50" rx="10"/>
+      <rect class="loop-node" x="370" y="18" width="120" height="50" rx="10"/>
+      <text class="loop-lbl" x="130" y="49">Plan</text>
+      <text class="loop-lbl" x="280" y="49">Agir</text>
+      <text class="loop-lbl" x="430" y="49">Observer</text>
+      <line class="loop-link" x1="192" y1="43" x2="214" y2="43" marker-end="url(#loop-arrow)"/>
+      <line class="loop-link" x1="342" y1="43" x2="364" y2="43" marker-end="url(#loop-arrow)"/>
+      <path class="loop-back" d="M430,70 L430,120 L130,120 L130,76" marker-end="url(#loop-arrow)"/>
+      <text class="loop-sub" x="280" y="146">répéter&nbsp;: chaque tour relit le contexte et régénère</text>
+    </svg>
+    <div class="source">Oviedo et al. 2025, <em>Energy Use of AI Inference: Efficiency Pathways and Test-Time Compute</em></div>
+  </section>
+
+  <!-- 17 · Multi-agent sessions fan out, frameworks differ up to 9,4× (dense) -->
+  <section>
+    <h2>Les sessions multi-agents se ramifient&nbsp;: N sous-agents × M tours, et le framework coûte jusqu'à 9,4×</h2>
+    <div class="grid-columns-2 fanout-split">
+      <svg class="fanout-svg" viewBox="0 0 460 250" aria-hidden="true">
+        <defs>
+          <marker id="fan-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+            <path d="M0,0 L10,5 L0,10 z" fill="#555"/>
+          </marker>
+        </defs>
+        <rect class="fan-node fan-orch" x="155" y="8" width="150" height="48" rx="10"/>
+        <text class="fan-lbl" x="230" y="38">Orchestrateur</text>
+        <line class="fan-link" x1="200" y1="56" x2="90" y2="118" marker-end="url(#fan-arrow)"/>
+        <line class="fan-link" x1="230" y1="56" x2="230" y2="118" marker-end="url(#fan-arrow)"/>
+        <line class="fan-link" x1="260" y1="56" x2="370" y2="118" marker-end="url(#fan-arrow)"/>
+        <rect class="fan-node" x="30" y="124" width="120" height="56" rx="10"/>
+        <rect class="fan-node" x="170" y="124" width="120" height="56" rx="10"/>
+        <rect class="fan-node" x="310" y="124" width="120" height="56" rx="10"/>
+        <text class="fan-lbl" x="90" y="149">Sous-agent</text>
+        <text class="fan-lbl" x="230" y="149">Sous-agent</text>
+        <text class="fan-lbl" x="370" y="149">Sous-agent</text>
+        <text class="fan-sub" x="90" y="169">boucle ×M</text>
+        <text class="fan-sub" x="230" y="169">boucle ×M</text>
+        <text class="fan-sub" x="370" y="169">boucle ×M</text>
+        <text class="fan-sub" x="62" y="104">N sous-agents</text>
+      </svg>
+      <div class="stat compact">
+        <span class="stat-number">9,4×</span>
+        <span class="stat-caption">AutoCodeRover a consommé 9,4× l'énergie d'OpenHands sur les mêmes tâches</span>
+      </div>
+    </div>
+    <p class="anchor-note">La multiplication se compose&nbsp;: l'architecture est le premier facteur énergétique, avant la taille des modèles.</p>
+    <div class="source">Tripathy et al. 2025, <em>SWEnergy: An Empirical Study on Energy Efficiency in Agentic Issue Resolution Frameworks with SLMs</em><br>Oviedo et al. 2025, <em>Energy Use of AI Inference: Efficiency Pathways and Test-Time Compute</em></div>
+  </section>
+
+  <!-- 18 · Architecture buys quality: 2.7% single query vs 18% agent, same model same issues (dense) -->
+  <section>
+    <h2>En une requête&nbsp;: 2,7&nbsp;% des <em>issues</em> résolues. En boucle d’agent&nbsp;: 18&nbsp;%</h2>
+    <div class="slm-table">
+      <div class="slm-head">
+        <span></span>
+        <span>Qualité<span class="slm-colsub">issues SWE-bench Lite résolues</span></span>
+        <span>Coût<span class="slm-colsub">par tâche</span></span>
+      </div>
+      <div class="slm-row">
+        <span class="slm-crit">Requête unique</span>
+        <span>2,7&nbsp;% (recherche puis réponse)</span>
+        <span>0,13&nbsp;$</span>
+      </div>
+      <div class="slm-row">
+        <span class="slm-crit">Agent en boucle</span>
+        <span class="slm-key">18,0&nbsp;% (même modèle)</span>
+        <span>1,67&nbsp;$</span>
+      </div>
+      <div class="slm-row">
+        <span class="slm-crit">Multi-agents</span>
+        <span>gains croissant avec la difficulté</span>
+        <span>se compose&nbsp;: N × M tours</span>
+      </div>
+    </div>
+    <p class="anchor-note">La qualité suit l’architecture, mais les rendements décroissent avec le nombre d’appels.</p>
+    <div class="source">Yang et al. 2024, <em>SWE-agent: Agent-Computer Interfaces Enable Automated Software Engineering</em>, NeurIPS<br>Li et al. 2024, <em>More Agents Is All You Need</em>, TMLR<br>Chen et al. 2024, <em>Are More LLM Calls All You Need? Towards Scaling Laws of Compound Inference Systems</em></div>
+  </section>
+
+  <!-- 19 · SLM vs LLM: 60-70% energy saved at equal accuracy on routine tasks (protected, dense) -->
+  <section>
+    <h3>Petits modèles vs grand modèle&nbsp;: 60-70&nbsp;% d'énergie économisée à précision égale sur les tâches routinières</h3>
+    <div class="slm-table">
+      <div class="slm-head">
+        <span></span>
+        <span>SLM<span class="slm-colsub">petits modèles</span></span>
+        <span>LLM<span class="slm-colsub">grand modèle</span></span>
+      </div>
+      <div class="slm-row">
+        <span class="slm-crit">Qualité</span>
+        <span>égale sur le routinier, chute sur le raisonnement abstrait</span>
+        <span>stable, y compris sur le raisonnement difficile</span>
+      </div>
+      <div class="slm-row">
+        <span class="slm-crit">Énergie &amp; eau</span>
+        <span class="slm-key">60-70&nbsp;% de moins</span>
+        <span>référence</span>
+      </div>
+      <div class="slm-row">
+        <span class="slm-crit">Latence</span>
+        <span>réponse plus rapide</span>
+        <span>réponse plus lente</span>
+      </div>
+    </div>
+    <div class="source">Sundaram et al. 2025, <em>AI's Environmental Cost: Comparing Resource Consumption Between SLMs and LLMs Across Queries</em><br>Tripathy et al. 2025, <em>SWEnergy: An Empirical Study on Energy Efficiency in Agentic Issue Resolution Frameworks with SLMs</em></div>
+  </section>
+
+</section>
+
+<!-- ═══════════════ §4 · THE REBOUND QUESTION ═══════════════ -->
+
+<section>
+
+  <!-- 20 · Section break -->
+  <section class="section-break" data-background-color="color-mix(in srgb, var(--accent) 6%, white)">
+    <div class="section-label">4</div>
+    <div class="section-question">Un logiciel moins cher&nbsp;: plus écologique, ou pas&nbsp;?</div>
+  </section>
+
+  <!-- 21 · Steelman: task-level comparison (Tomlinson figure 1) -->
+  <section class="fig-h2-sm">
+    <h2>À l'échelle de la tâche, le run assisté par IA émet 1&nbsp;000× moins qu'un humain (États-Unis)</h2>
+    <div class="tomlinson-split">
+      <div>
+        <img class="paper-fig fig-tomlinson" src="figures/tomlinson-fig1-writing.png" alt="Figure 1 de Tomlinson et al. 2024 : CO2e par page de texte, échelle logarithmique, IA vs humain">
+        <p class="fig-caption">CO₂e par page de texte, échelle log (figure 1 de l’article, CC BY 4.0)</p>
+      </div>
+      <div class="stat ledger-stat">
+        <span class="stat-number">1&nbsp;400&nbsp;g vs 1,35&nbsp;g</span>
+        <span class="stat-caption">CO₂e pour écrire une page (humain, États-Unis vs ChatGPT) · illustrer une image&nbsp;: 5&nbsp;500&nbsp;g vs 2,2&nbsp;g</span>
+      </div>
+    </div>
+    <div class="source">Tomlinson et al. 2024, <em>The carbon emissions of writing and illustrating are lower for AI than for humans</em><br>Cook et al. 2025, <em>Beyond Counting Carbon: AI Environmental Assessments Struggle to Inform Net Impact Decisions</em></div>
+  </section>
+
+  <section class="cook-counter">
+    <style>
+      .cook-counter .cook-split { display: grid; grid-template-columns: 1.15fr 1fr; gap: 1.4em; width: 92%; margin: .15em auto 0; align-items: start; }
+      .cook-counter table { border-collapse: collapse; width: 100%; font-size: .5em; }
+      .cook-counter th, .cook-counter td { padding: .3em .6em; text-align: right; border-bottom: 1px solid #00000022; }
+      .cook-counter th { color: var(--muted); font-weight: 400; }
+      .cook-counter th:first-child, .cook-counter td:first-child { text-align: left; }
+      .cook-counter tr.rev td { color: var(--accent); font-weight: 700; }
+      .cook-counter .cook-method { color: var(--muted); font-size: .42em; margin-top: .25em; }
+      .cook-counter .cook-sens { color: var(--muted); font-size: .48em; margin-top: .3em; }
+      .cook-counter .cook-arg { font-size: .58em; line-height: 1.5; text-align: left; }
+      .cook-counter .cook-ren { color: #555; font-size: .5em; margin-top: .55em; }
+    </style>
+    <!-- 22 · Counter-argument: Cook et al. reanalysis -->
+    <h2>À périmètres alignés, la réanalyse inverse le classement</h2>
+    <div class="cook-split">
+      <div>
+        <table>
+          <thead><tr><th>CO₂e par page écrite</th><th>humain</th><th>IA</th></tr></thead>
+          <tbody>
+            <tr><td>étude d’origine</td><td>1&nbsp;411&nbsp;g</td><td>1,4&nbsp;g</td></tr>
+            <tr class="rev"><td>réanalyse, périmètres alignés</td><td>9,3&nbsp;g</td><td>11,7&nbsp;g</td></tr>
+          </tbody>
+        </table>
+        <p class="cook-method">réanalyse&nbsp;: bottom-up des deux côtés, matériel inclus, l’humain reste présent dans le scénario assisté (cadre EGDC)</p>
+      </div>
+      <div class="cook-arg">
+        <p>La comparaison par tâche confronte deux <b>produits</b>. Une décision pose une autre question&nbsp;: l’écriture assistée <b>remplace</b> la pratique, ou s’y <b>ajoute</b>&nbsp;?</p>
+        <p class="fragment">Les effets indirects qui décident de l’impact net restent hors périmètre.</p>
+      </div>
+    </div>
+    <div class="rebound-typo fragment">
+      <span class="rebound-lead">Trois formes de rebond&nbsp;:</span>
+      <span class="rebound-chip">direct&nbsp;: moins cher/appel → plus d’appels</span>
+      <span class="rebound-chip">indirect&nbsp;: l’IA remplace des pratiques → de nouveaux usages</span>
+      <span class="rebound-chip">temporel&nbsp;: les économies d’aujourd’hui → l’échelle de demain</span>
+    </div>
+    <div class="source source-sm">Cook et al. 2025, <em>Beyond Counting Carbon: AI Environmental Assessments Struggle to Inform Net Impact Decisions</em> (working paper, ETH Zurich)<br>Ren et al. 2024, <em>Reconciling the contrasting narratives on the environmental impact of large language models</em><br>Luccioni et al. 2025, <em>From Efficiency Gains to Rebound Effects: The Problem of Jevons' Paradox in AI's Polarized Environmental Debate</em> (ACM FAccT)</div>
+  </section>
+
+  <!-- 23 · Indirect impact: the software production chain (bridge, accent A) -->
+  <section>
+    <h2>L'impact indirect passe par la production logicielle elle-même</h2>
+    <div class="flow indirect-chain">
+      <div class="flow-node">Un développement moins cher<span class="node-sub">effet d'offre</span></div>
+      <span class="flow-arrow fragment" data-fragment-index="1">→</span>
+      <div class="flow-node fragment" data-fragment-index="1">Plus de logiciel produit<span class="node-sub">effet d'usage</span></div>
+      <span class="flow-arrow fragment" data-fragment-index="2">→</span>
+      <div class="flow-node fragment accent" data-fragment-index="2">Plus de calcul exécuté</div>
+    </div>
+    <div class="source">The Shift Project 2025, <em>Intelligence artificielle, données, calculs&nbsp;: quelles infrastructures dans un monde décarboné&nbsp;?</em><br>Ekchajzer et al., <em>From Attributional to Consequential LCA: Which Theoretical Framework for Assessing AI's Environmental Impacts?</em></div>
+  </section>
+
+  <!-- 24 · System-level ledger: unit × count, two aggregation scenarios (schematic) -->
+  <section class="ledger-why">
+    <style>
+      .ledger-why .ledger-key { color: #555; font-size: .52em; margin-top: .35em; }
+      .ledger-why .ledger { width: 94%; }
+      .ledger-why .ledger-head { font-size: .65em; }
+      .ledger-why .ledger-sub { color: var(--muted); font-size: .42em; line-height: 1.4; margin: .3em 0 .6em; }
+    </style>
+    <h2>L’économie par tâche ne devient un gain global que si le nombre de tâches reste fixe</h2>
+    <p class="ledger-key">émissions du parc = émissions par tâche × nombre de tâches&nbsp;: la comparaison par tâche ne fixe que le premier facteur</p>
+    <div class="ledger" style="--bar-label-w:8.5em">
+      <div class="ledger-col">
+        <div class="ledger-head">À volume constant</div>
+        <p class="ledger-sub">le scénario comptable&nbsp;: autant de tâches qu’avant, l’économie par tâche se retrouve au niveau du parc (une année, tout le logiciel exécuté)</p>
+        <div class="ledger-row bar-row"><label>CO₂e du parc</label><div class="bar-row-main"><div class="bar bar-muted" style="width:12%"></div></div></div>
+      </div>
+      <div class="ledger-col">
+        <div class="ledger-head ledger-head-agent">Quand produire devient moins cher</div>
+        <p class="ledger-sub">ce qui arrive en pratique&nbsp;: le même total du parc, où l’inférence unitaire baisse mais plus de logiciel est produit et exécuté</p>
+        <div class="ledger-row bar-row"><label>dont inférence des runs</label><div class="bar-row-main"><div class="bar" style="width:20%"></div></div></div>
+        <div class="ledger-row bar-row ledger-growth fragment"><label>+ croissance du logiciel produit</label><div class="bar-row-main"><div class="bar" style="width:60%"></div></div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 25 · Manufactured demand (adapted from GP deck "8 · Manufactured demand") -->
+  <section class="mfg-demand">
+    <style>
+      .mfg-demand .fragment:not(.visible) { display: none; }
+      .mfg-demand .quote { margin-top: .4em; }
+      .mfg-demand .quote.compact .quote-text { font-size: .95em; }
+      .mfg-demand .quote .quote-attribution { font-size: .55em; }
+    </style>
+    <h2>Une grande partie de la demande est créée par les choix de conception</h2>
+    <div class="bolt-row">
+      <div class="tool mega"><span class="ai-tag">10×</span><i class="iconoir-search"></i>recherche</div>
+      <div class="tool"><span class="ai-tag">IA</span><i class="iconoir-chat-bubble"></i>chat</div>
+      <div class="tool"><span class="ai-tag">IA</span><i class="iconoir-media-image"></i>photos</div>
+      <div class="tool"><span class="ai-tag">IA</span><i class="iconoir-media-video"></i>vidéo</div>
+      <div class="tool"><span class="ai-tag">IA</span><i class="iconoir-code"></i>code</div>
+      <div class="tool"><span class="ai-tag">IA</span><i class="iconoir-microphone"></i>voix</div>
+    </div>
+    <p class="bolt-note">des fonctions IA ajoutées par défaut sur les outils du quotidien</p>
+    <div class="quote compact fragment fade-up">
+      <span class="quote-text">«&nbsp;Le développement des réseaux ne vise pas à servir une demande préexistante&nbsp;: c’est lui qui stimule cette demande.&nbsp;»</span>
+      <span class="quote-attribution">Morand et al. 2026, à propos du déploiement de la 5G&nbsp;· même logique pour les modèles de ML</span>
+    </div>
+    <div class="source">Morand et al. 2026, <em>When rebound effect is not a side effect: analyzing sociotechnical contexts of digital technologies</em><br>Morand, Ligozat &amp; Névéol 2025, <em>The Environmental Impacts of Machine Learning Training Keep Rising, Evidencing Rebound Effect</em><br>de Vries 2023, <em>The growing energy footprint of artificial intelligence</em></div>
+  </section>
+
+  <!-- 26 · Global data-centre GHG emissions vs climate target (Shift Project fig. 2, SVG redraw) -->
+  <section>
+    <h2>Même en décarbonant l’électricité, les émissions des centres de données font ×2,5 à ×3,7 d’ici 2030</h2>
+    <div class="shift-split">
+      <div>
+        <svg class="shift-chart" viewBox="0 0 600 332" role="img" aria-label="Émissions de GES des centres de données mondiaux 2020-2030 : 600 à 920 MtCO2e en 2030 contre une cible climat à environ 140 MtCO2e">
+          <!-- horizontal gridlines (200 MtCO2e steps) -->
+          <line class="grid-line" x1="50" y1="40"  x2="460" y2="40"/>
+          <line class="grid-line" x1="50" y1="94"  x2="460" y2="94"/>
+          <line class="grid-line" x1="50" y1="148" x2="460" y2="148"/>
+          <line class="grid-line" x1="50" y1="202" x2="460" y2="202"/>
+          <line class="grid-line" x1="50" y1="256" x2="460" y2="256"/>
+          <line class="grid-line" x1="50" y1="310" x2="460" y2="310" style="stroke:#c9c9c4"/>
+          <!-- vertical gridlines every 2 years -->
+          <line class="grid-line" x1="50"  y1="40" x2="50"  y2="310"/>
+          <line class="grid-line" x1="132" y1="40" x2="132" y2="310"/>
+          <line class="grid-line" x1="214" y1="40" x2="214" y2="310"/>
+          <line class="grid-line" x1="296" y1="40" x2="296" y2="310"/>
+          <line class="grid-line" x1="378" y1="40" x2="378" y2="310"/>
+          <line class="grid-line" x1="460" y1="40" x2="460" y2="310"/>
+          <!-- axis labels -->
+          <text class="axis-txt" x="44" y="44"  text-anchor="end">1&nbsp;000</text>
+          <text class="axis-txt" x="44" y="98"  text-anchor="end">800</text>
+          <text class="axis-txt" x="44" y="152" text-anchor="end">600</text>
+          <text class="axis-txt" x="44" y="206" text-anchor="end">400</text>
+          <text class="axis-txt" x="44" y="260" text-anchor="end">200</text>
+          <text class="axis-txt" x="44" y="314" text-anchor="end">0</text>
+          <text class="axis-txt" x="50" y="20">MtCO₂e/an</text>
+          <text class="axis-txt" x="50"  y="328" text-anchor="middle">2020</text>
+          <text class="axis-txt" x="132" y="328" text-anchor="middle">2022</text>
+          <text class="axis-txt" x="214" y="328" text-anchor="middle">2024</text>
+          <text class="axis-txt" x="296" y="328" text-anchor="middle">2026</text>
+          <text class="axis-txt" x="378" y="328" text-anchor="middle">2028</text>
+          <text class="axis-txt" x="460" y="328" text-anchor="middle">2030</text>
+          <!-- cible : -45 % entre 2020 et 2030 (SBTi), ≈ 140 MtCO2e -->
+          <line x1="50" y1="272.2" x2="460" y2="272.2" stroke="var(--accent)" stroke-width="3" stroke-dasharray="9 6"/>
+          <text class="axis-txt" x="466" y="276" fill="var(--accent)">cible</text>
+          <!-- scénario Stated Policies (AIE, WEO 2024) : ~600 MtCO2e en 2030 -->
+          <polyline points="50,242.5 91,234.4 132,227.7 173,220.9 214,211.5 255,200.7 296,189.9 337,177.7 378,166.9 419,157.5 460,148" fill="none" stroke="var(--steel)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+          <text class="end-txt" x="466" y="152" fill="var(--steel)">600</text>
+          <!-- sensibilité intensité carbone constante : ~920 MtCO2e en 2030 -->
+          <polyline points="50,243.9 91,236.6 132,229 173,220.9 214,208.8 255,193.9 296,176.4 337,157.5 378,129.1 419,96.7 460,61.6" fill="none" stroke="var(--impact)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+          <text class="end-txt" x="466" y="66" fill="var(--impact)">920</text>
+        </svg>
+        <div class="shift-legend">
+          <span><span class="sw" style="border-top-color:var(--impact)"></span>intensité carbone de l’électricité constante</span>
+          <span><span class="sw" style="border-top-color:var(--steel)"></span>électricité : scénario Stated Policies (AIE, WEO 2024)</span>
+          <span><span class="sw dashed" style="border-top-color:var(--accent)"></span>cible climat : −45&nbsp;% de GES entre 2020 et 2030 (SBTi)</span>
+        </div>
+      </div>
+      <div class="shift-side">
+        <div class="stat compact">
+          <span class="stat-number">920</span>
+          <span class="stat-caption">MtCO₂e/an en 2030, deux fois les émissions annuelles de la France</span>
+        </div>
+        <div class="callout bg-red">
+          <p>«&nbsp;Les trajectoires de déploiement actuelles sont donc incompatibles avec la double contrainte carbone, qu’importe les progrès technologiques&nbsp;»</p>
+        </div>
+      </div>
+    </div>
+    <div class="source">The Shift Project 2025, <em>Intelligence artificielle, données, calculs&nbsp;: quelles infrastructures dans un monde décarboné&nbsp;?</em></div>
+  </section>
+
+  <section class="alpine-rebuttal">
+    <style>
+      .alpine-rebuttal .alpine-stat { margin-top: .3em; }
+      .alpine-rebuttal .alpine-stat .stat-number { font-size: 2.2em; }
+      .alpine-rebuttal .alpine-stat .stat-caption { font-size: .6em; }
+    </style>
+    <!-- 27 · Rebuttal: Alpine et al. enabled vs avoided (adapted from GP deck "17 · Rebuttal") -->
+    <h2>Les émissions activées par les gains IA dépassent celles qu’ils évitent</h2>
+    <div class="rebuttal-cols">
+      <div class="win-cards cards2x2">
+        <div class="win-card dimmed"><i class="iconoir-energy-usage-window"></i>optimisation du réseau électrique</div>
+        <div class="win-card dimmed"><i class="iconoir-battery-charging"></i>découverte de matériaux et de batteries</div>
+        <div class="win-card dimmed"><i class="iconoir-cloud-sunny"></i>prévision météo</div>
+        <div class="win-card dimmed"><i class="iconoir-home"></i>gestion énergétique des bâtiments</div>
+      </div>
+      <figure class="paper-fig alpine-fig">
+        <img src="figures/fig-alpine-fig2.png" alt="Émissions mondiales de CO2&nbsp;: émissions évitées (bleu, vers le bas), émissions activées (rouge, vers le haut) et effet net (violet) de l’adoption parallèle de l’IA">
+        <figcaption>émissions évitées (bleu&nbsp;: gains IA sur les renouvelables) <br>contre émissions activées (rouge&nbsp;: gains IA sur les fossiles)&nbsp;;<br> en violet, l’effet net de l’adoption parallèle</figcaption>
+      </figure>
+    </div>
+    <div class="stat alpine-stat fragment fade-up">
+      <span class="stat-number">+0,47-1,8&nbsp;Gt CO₂/an</span>
+      <span class="stat-caption">effet net, adoption parallèle (1,2-4,8&nbsp;% des émissions énergie 2024)&nbsp;· activé&nbsp;: 0,6-2,4&nbsp;Gt</span>
+    </div>
+    <div class="source">Alpine et al. 2026, <em>AI-driven productivity gains enable more CO₂ emissions than they avoid in a global energy–economy model</em></div>
+  </section>
+
+  <!-- 28 · Section takeaway -->
+  <section class="statement">
+    <div class="statement-text" style="font-size:1.4em;">Les économies par tâche sont réelles.<br><span class="hl">La croissance qu’elles activent aussi.</span></div>
+    <!-- <p class="statement-sub">la question est empirique&nbsp;; les preuves actuelles pèsent du côté de la croissance</p> -->
+  </section>
+
+</section>
+
+<!-- ═══════════════ §5 · MEASURING YOUR OWN FOOTPRINT ═══════════════
+     Palette shift: every section below carries .tone-green (accent B, the ok
+     green) so the deck visibly turns "actionable" from here. Section 6 keeps
+     it on the rubric (33); the closing statement (34) returns to neutral. -->
+
+<section>
+
+  <!-- 29 · Section break -->
+  <section class="section-break tone-green" data-background-color="color-mix(in srgb, var(--accent) 6%, white)">
+    <div class="section-label">5</div>
+    <div class="section-question">Mesurez votre propre usage</div>
+  </section>
+
+  <!-- 30 · EcoLogits: per-call energy estimation in Python -->
+  <section class="tone-green">
+    <h2>EcoLogits estime l'énergie de chaque appel d'API LLM en Python</h2>
+    <div class="code-panels solo">
+<pre><span class="kw">from</span> ecologits <span class="kw">import</span> EcoLogits
+<span class="kw">from</span> openai <span class="kw">import</span> OpenAI
+
+EcoLogits.<span class="fn">init</span>(providers=[<span class="st">"openai"</span>])
+client = OpenAI()
+r = client.chat.completions.<span class="fn">create</span>(
+    model=<span class="st">"gpt-4o-mini"</span>, messages=[{<span class="st">"role"</span>: <span class="st">"user"</span>, <span class="st">"content"</span>: <span class="st">"write an email"</span>}])
+<span class="fn">print</span>(r.impacts.energy.value, <span class="st">"Wh"</span>)</pre>
+    </div>
+    <div class="code-output"><span class="co-num">3,96&nbsp;Wh</span> · <span class="co-num">1,63&nbsp;gCO₂eq</span> · <span class="co-num">14,9&nbsp;mL d'eau</span> · <span class="co-num">6,62&nbsp;µgSbeq</span></div>
+    <style>
+      .boxed.eco-warn { border-color: #b5731c; background-color: #b5731c14; width: fit-content; margin: .55em auto 0; padding: .35em 1.1em; font-size: .78em; display: flex; align-items: center; gap: .15em; }
+      .boxed.eco-warn p { margin: 0; }
+    </style>
+    <div class="boxed eco-warn">
+      <i class="iconoir-warning-triangle"></i>
+      <p><strong>Angles morts&nbsp;:</strong> pas de cache&nbsp;; jetons d'entrée non comptés</p>
+    </div>
+    <p class="anchor-note">une requête «&nbsp;write an email&nbsp;» (calculateur EcoLogits)</p>
+    <div class="source">EcoLogits docs (docs.ecologits.ai)</div>
+  </section>
+
+  <!-- 31 · CodeCarbon: process-level CO2 measurement, hardware included -->
+  <section class="tone-green">
+    <h2>CodeCarbon mesure le CO₂ de tout processus Python, matériel inclus</h2>
+    <div class="code-panels solo">
+<pre><span class="kw">from</span> codecarbon <span class="kw">import</span> EmissionsTracker
+
+tracker = <span class="fn">EmissionsTracker</span>()
+tracker.<span class="fn">start</span>()
+<span class="fn">train_my_model</span>()
+emissions = tracker.<span class="fn">stop</span>()  <span class="cm"># kg CO₂eq</span></pre>
+</div>
+<p>Ou usage en CLI</p>
+<div class="code-panels solo">
+<pre>codecarbon monitor --no-api -- python train.py</pre>
+</div>
+    <!-- <div class="placeholder code-output-ph"><span class="placeholder-label">[P: sample output from a real run]</span></div> -->
+    <div class="source">Lacoste et al. 2019, <em>Quantifying the Carbon Emissions of Machine Learning</em></div>
+  </section>
+
+  <!-- 32 · Neuralwatt: energy-based pricing (protected, dense) -->
+  <section class="tone-green">
+    <h2>Neuralwatt facture l'énergie réellement consommée, en kWh plutôt qu'en jetons</h2>
+    <div class="grid-columns-2 nw-split">
+      <div>
+        <div class="nw-panel-title">chaque réponse API renvoie&nbsp;:</div>
+        <div class="code-panels solo" style="width:100%; margin:0">
+<pre>{
+  <span class="fn">"model"</span>: <span class="st">"deepseek-v4.1-flash"</span>,
+  <span class="fn">"total_tokens"</span>: 13,
+  <span class="fn hl">"energy_joules"</span>: <span class="hlv">60.37</span>,
+  <span class="cm">…</span>
+}</pre>
+        </div>
+      </div>
+      <div>
+        <div class="stat compact">
+          <span class="stat-number">10&nbsp;$/kWh</span>
+          <span class="stat-caption">un tarif unique, tous modèles (moins en abonnement)</span>
+        </div>
+        <div class="nw-models">
+          <div class="nw-models-head">énergie mesurée par requête</div>
+          <div class="nw-model-row"><span>DeepSeek V4.1 Flash</span><span class="nw-val">≈ 178&nbsp;mWh/requête</span></div>
+          <div class="nw-model-row"><span>DeepSeek V4 Flash</span><span class="nw-val">≈ 263&nbsp;mWh/requête</span></div>
+        </div>
+      </div>
+    </div>
+    <div class="source">neuralwatt.com · docs.neuralwatt.com (Energy Methodology)</div>
+  </section>
+
+  <!-- 33 · Own agent consumption: Neuralwatt usage history (protected) -->
+  <section class="tone-green">
+    <h2>Ma propre conso sur Neuralwatt.</h2>
+    <
+    <style>
+      .nw-usage-fig figcaption { color: var(--muted); font-size: .55em; line-height: 1.4; margin-top: .45em; }
+    </style>
+    <figure class="nw-usage-fig">
+      <img src="images/neuralwatt-usage.png" alt="Tableau de bord Neuralwatt&nbsp;: 8&nbsp;836 requêtes, 485,8&nbsp;M jetons, 458,2&nbsp;M jetons en cache, 14,19&nbsp;$, 2,91&nbsp;kWh, 192,3194&nbsp;g&nbsp;CO₂">
+      <figcaption>95&nbsp;% des jetons de prompt servis depuis le cache · 2,91&nbsp;kWh et 192,3&nbsp;g&nbsp;CO₂ au total</figcaption>
+    </figure>
+  </section>
+
+  <!-- 34 · Caveat: estimates, not accounting -->
+  <section class="tone-green">
+    <h2>Chaque mesure est une fourchette&nbsp;: le même appel «&nbsp;write an email&nbsp;» pèse de 2,52 à 5,4&nbsp;Wh</h2>
+    <style>
+      .err-concrete { width: 86%; padding: .4em 1.2em .8em; }
+      .err-concrete .err-track { height: 3.4em; width: 86%; margin: 1.7em auto .1em; }
+      .err-concrete .err-val { top: -1.6em; font-size: .95em; }
+      .err-concrete .err-bound { position: absolute; top: 2.45em; color: var(--muted); font-size: .6em; white-space: nowrap; }
+      .err-concrete .err-bound-l { left: 12%; transform: translateX(-50%); }
+      .err-concrete .err-bound-r { right: 12%; transform: translateX(50%); }
+      .err-concrete .err-caption { margin-top: .1em; }
+      .err-concrete .err-usage { display: grid; grid-template-columns: 1fr 1fr; gap: 1.2em; margin-top: .8em; font-size: .68em; }
+      .err-concrete .err-use { display: flex; align-items: center; justify-content: center; gap: .3em; text-align: left; }
+      .err-concrete .err-use i { font-size: 1.4em; flex: none; }
+      .err-concrete .err-use-ok i { color: var(--ok); }
+      .err-concrete .err-use-ko i { color: var(--impact); }
+      .err-concrete .err-use p { margin: 0; }
+    </style>
+    <div class="boxed err-box err-concrete">
+      <div class="err-track">
+        <div class="err-range"></div>
+        <div class="err-val">3,96&nbsp;Wh</div>
+        <div class="err-dot"></div>
+        <div class="err-bound err-bound-l">2,52&nbsp;Wh</div>
+        <div class="err-bound err-bound-r">5,4&nbsp;Wh</div>
+      </div>
+      <div class="err-caption">estimation centrale et fourchette affichée par le calculateur EcoLogits</div>
+      <div class="err-usage">
+        <div class="err-use err-use-ok"><i class="iconoir-check"></i><p><strong>Bon outil&nbsp;:</strong> tendances, ratios, ordres de grandeur</p></div>
+        <div class="err-use err-use-ko"><i class="iconoir-xmark"></i><p><strong>Mauvais outil&nbsp;:</strong> un inventaire carbone à déclarer</p></div>
+      </div>
+    </div>
+    <div class="source">Calculateur EcoLogits (calculator.ecologits.ai), gpt-4o-mini, 250 jetons de sortie</div>
+  </section>
+
+</section>
+
+<!-- ═══════════════ §6 · CLOSE ═══════════════
+     No section-break slide: the rubric (36), the shared-responsibility comic
+     (37), the closing statement (38) and the thanks slide (39) are flat
+     children of this wrapper. The rubric keeps the section 5 green tone
+     (.tone-green); 38, 39 and 40 return to neutral. -->
+
+<section>
+
+  <!-- 35 · Closing rubric (protected) -->
+  <section class="tone-green">
+    <h2>Une grille de frugalité&nbsp;: bien dimensionner le modèle, les tours, et mesurer d'abord</h2>
+    <div class="rubric">
+      <div class="rubric-row"><span class="rubric-check">✓</span><span>Choix du modèle</span></div>
+      <div class="rubric-row fragment" data-fragment-index="1"><span class="rubric-check">✓</span><span>Quand passer en agentique du tout</span></div>
+      <div class="rubric-row fragment" data-fragment-index="1"><span class="rubric-check">✓</span><span>Ramification de sous-agents</span></div>
+      <div class="rubric-row fragment" data-fragment-index="2"><span class="rubric-check">✓</span><span>Longueur des réponses</span></div>
+      <div class="rubric-row fragment" data-fragment-index="3"><span class="rubric-check">✓</span><span>Mesurer avant de supposer</span></div>
+    </div>
+  </section>
+
+  <!-- 36 · Shared responsibility: not only on users, also on providers -->
+  <section class="responsa">
+    <style>
+      .responsa .ohno-fig { margin: .45em auto 0; width: 84%; }
+      .responsa .ohno-fig img { width: 100%; }
+      .responsa .ohno-cap { color: var(--muted); font-size: .6em; line-height: 1.5; margin: .55em auto 0; width: 78%; }
+    </style>
+    <h2>Petit point responsabilité</h2>
+    <figure class="ohno-fig">
+      <img src="images/webcomicname-oh-no.png" alt="Comic «&nbsp;oh no&nbsp;» en trois cases&nbsp;: un présentateur télé dit «&nbsp;you should do your bit to help the environment&nbsp;», un personnage balaye sa petite zone verte «&nbsp;I am helping&nbsp;», puis on découvre une usine «&nbsp;CORPORATION&nbsp;» qui fume derrière lui&nbsp;: «&nbsp;oh no&nbsp;».">
+    </figure>
+    <div class="source">Alex Norris, <em>Webcomic Name</em>, épisode «&nbsp;oh no&nbsp;» (webcomicname.com)</div>
+  </section>
+
+  <!-- 37 · Closing statement (neutral palette returns) -->
+  <section class="statement">
+    <div class="statement-text" style="font-size:1.4em;">Ce qui compte pour moi&nbsp;:<br>l'usage <span class="hl">en connaissance de cause</span></div>
+  </section>
+
+  <!-- 38 · Thanks: contact and resources -->
+  <section class="thanks">
+    <style>
+      .thanks .thanks-links { width: 92%; margin-left: auto; margin-right: auto; }
+      .thanks .thanks-link { flex: 1 1 0; padding: .55em .6em; }
+      .thanks .thanks-link span { font-size: .62em; line-height: 1.45; }
+    </style>
+    <h2>Merci</h2>
+    <p class="thanks-contact">Tristan Coignion · <a href="mailto:tristan.coignion@inria.fr">tristan.coignion@inria.fr</a> · <a href="https://tristan.coignion.fr">tristan.coignion.fr</a></p>
+    <div class="thanks-links">
+      <a class="thanks-link" href="https://docs.ecologits.ai">EcoLogits<span>l'énergie de chaque appel d'API LLM en Python</span></a>
+      <a class="thanks-link" href="https://codecarbon.io">CodeCarbon<span>le CO₂ de tout processus Python, matériel inclus</span></a>
+      <a class="thanks-link" href="https://neuralwatt.com">Neuralwatt<span>un fournisseur qui facture l'énergie mesurée en kWh</span></a>
+      <a class="thanks-link" href="https://tristan.coignion.fr">Diapositives<span>cette présentation, en ligne</span></a>
+    </div>
+  </section>
+  </section>
+
+</section>
+
+<!-- ═══════════════ BACKUP ═══════════════ -->
+
+<section>
+
+  <!-- Backup · Measured energy varies by a factor 70 (data-visibility="uncounted": navigable but not counted in c/t) -->
+  <section data-visibility="uncounted">
+    <h2>Des requêtes comparables varient d'un facteur 70 en énergie mesurée</h2>
+    <div class="boxed variance-box">
+      <p><span class="variance-energy">0,43&nbsp;Wh</span>&nbsp; requête courte GPT-4o &nbsp;&nbsp;vs&nbsp;&nbsp; <span class="variance-energy">33+&nbsp;Wh</span>&nbsp; prompt long o3 / DeepSeek-R1</p>
+    </div>
+    <div class="source">Jegham et al. 2025, <em>How Hungry is AI? Benchmarking Energy, Water, and Carbon Footprint of LLM Inference</em></div>
+  </section>
+
+  <!-- Backup · Text query: 0,24 to 4 Wh, dominated by the response (data-visibility="uncounted": navigable but not counted in c/t) -->
+  <section class="fig-h2-sm" data-visibility="uncounted">
+    <h2>Une requête de texte coûte 0,24 à 4&nbsp;Wh, dominée par la réponse</h2>
+    <div class="stat compact">
+      <span class="stat-number">0,24&nbsp;Wh</span>
+      <span class="stat-caption">prompt Gemini médian, mesuré en production · jusqu'à 3,96&nbsp;Wh pour un « write an email » non optimisé (calculateur EcoLogits)</span>
+    </div>
+    <style>
+      /* backup slide only: bars must keep their set widths (no flex shrink); the
+         response bar carries its value inside, the tiny prompt bar beside it */
+      .split-bars .bar-row .bar { flex: none; font-size: .55em; }
+      .split-bars .bar-row .bar-value { flex: none; }
+    </style>
+    <div class="split-bars" style="--bar-label-w:12em">
+      <div class="bar-row"><label>Prompt (jetons d'entrée)</label><div class="bar-row-main"><div class="bar bar-muted" style="width:10%"></div><span class="bar-value">≈ 10&nbsp;% de l'énergie</span></div></div>
+      <div class="bar-row"><label>Réponse (jetons de sortie)</label><div class="bar-row-main"><div class="bar" style="width:100%">≈ 90&nbsp;% de l'énergie</div></div></div>
+    </div>
+    <p class="tiny-note" style="text-align:center; margin-top:.1em;">Ce que mesurent les barres&nbsp;: la part de l'énergie d'une requête, prompt vs réponse · proportions schématiques (non mesurées)&nbsp;: la réponse domine</p>
+    <div class="source">Elsworth et al. 2025, <em>Measuring the environmental impact of delivering AI at Google Scale</em><br>Jegham et al. 2025, <em>How Hungry is AI? Benchmarking Energy, Water, and Carbon Footprint of LLM Inference</em></div>
+  </section>
+
+</section>
+
+</div>
+</div>
+
+<script src="dist/reveal.js"></script>
+<script src="dist/plugin/notes.js"></script>
+<script>
+  Reveal.initialize({
+    hash: true,
+    center: true,
+    margin: 0,
+    progress: false,
+    slideNumber: 'c/t',
+    controlsLayout: 'edges',
+    plugins: [RevealNotes]
+  });
+</script>
+</body>
+</html>

@@ -28,6 +28,7 @@ permalink: /talks/
 - A performance Study of LLM-Generated Code on Leetcode ~ [Green Days 2024](https://perso.ens-lyon.fr/laurent.lefevre/greendaystoulouse2024/) - [[Slides]](https://slides.com/tristancoignion/a-performance-study)
 
 - Course on the environmental impact of AI (2025) - [[Slides]](./2025-11-ees.pdf)
+- L'empreinte environnementale de l'IA générative et des agents de développement ~ ANF DevLog IA4Dev 2026 - [[Slides (HTML)]](./2026-10-ia4dev/) - [[PDF]](./2026-10-ia4dev/ia4dev-2026-slides.pdf)
 
 ## Posters
 
