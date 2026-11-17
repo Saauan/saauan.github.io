@@ -22,6 +22,7 @@ permalink: /talks/
 }
 </style>
 ## Selected talks
+- Measured from the feed: the unsustainable growth of AI video generation ~ [AI and Sustainability Workshop](https://www.ens.psl.eu/agenda/ai-and-sustainability-workshop/2026-11-17t083000) at ENS, Observatoire IA 2026 - [[Slides]](./2026-11-observatoire-ia.pdf)
 - Thesis defense (2025) - [[Slides]](./thesis.pdf)
 - Green My LLM: How much does your copilot eat? ~ GT-GLIA 2025 - [[Slides]](https://slides.com/tristancoignion/gt-gl-ia-2025)
 - A performance Study of LLM-Generated Code on Leetcode ~ [EASE 2024](https://conf.researchr.org/home/ease-2024) - [[Slides]](https://slides.com/tristancoignion/ease-2024)
